@@ -1,5 +1,8 @@
 source $HOME/.bash_profile
 
+autoload -U promptinit; promptinit
+prompt pure
+
 # =================
 #   PATH
 # =================
