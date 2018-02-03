@@ -1,6 +1,12 @@
 alias ag='ag --path-to-ignore ~/.agignore'
 alias vim='nvim'
 
+alias jscode='cd $HOME/Dev/JS-code'
+alias rbcode='cd $HOME/Dev/Ruby-code'
+alias pycode='cd $HOME/Dev/Python-code'
+alias gocode='cd $HOME/Dev/Go-code'
+alias opscode='cd $HOME/Dev/DevOps-code'
+
 alias dc='docker-compose'
 alias dm='docker-machine'
 alias drmi='docker rmi -f $(docker images -a -q)'
