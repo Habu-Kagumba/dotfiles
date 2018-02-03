@@ -3,3 +3,7 @@ vendor
 .git
 .bundle
 venv
+env
+public
+tmp
+dist
