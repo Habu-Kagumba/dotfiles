@@ -21,6 +21,9 @@ export FZF_DEFAULT_OPTS='
 	--color info:183,prompt:110,spinner:107,pointer:167,marker:215
 '
 
+ZSH=$HOME/.oh-my-zsh
+ZSH_THEME=""
+
 plugins=(git zsh-syntax-highlighting)
 fpath=(/usr/local/share/zsh-completions $fpath)
 
