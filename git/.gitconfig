@@ -3,7 +3,7 @@
     email = habukagumba@gmail.com
 [core]
     editor = /usr/local/bin/nvim
-    excludesfile = ~/.gitignore_global
+	excludesfile = /Users/herbertkagumba/.gitignore_global
 [push]
     default = current
 [branch "master"]
@@ -21,7 +21,7 @@
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
 [mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [alias]
     # Clean merged branches

@@ -1,8 +1,5 @@
 source $HOME/.bash_profile
 
-autoload -U promptinit; promptinit
-prompt pure
-
 # =================
 #   PATH
 # =================
@@ -11,7 +8,7 @@ export PATH="$HOME/bin:$PATH"
 export GOPATH="$HOME/Dev/Go-code"
 export PATH="$GOPATH/bin:$PATH"
 export PATH="/usr/local/heroku/bin:$PATH"
-# export PATH="/Applications/Postgres.app/Contents/Versions/9.6/bin:$PATH"
+export PATH="/Applications/Postgres.app/Contents/Versions/10/bin:$PATH"
 
 # =================
 #   EXPORTS
@@ -24,25 +21,18 @@ export FZF_DEFAULT_OPTS='
 	--color info:183,prompt:110,spinner:107,pointer:167,marker:215
 '
 
-export LSCOLORS=cxBxhxDxfxhxhxhxhxcxcx
-export CLICOLOR=1
-
-# support colors in less
-export LESS_TERMCAP_mb=$'\E[01;31m'
-export LESS_TERMCAP_md=$'\E[01;31m'
-export LESS_TERMCAP_me=$'\E[0m'
-export LESS_TERMCAP_se=$'\E[0m'
-export LESS_TERMCAP_so=$'\E[01;44;33m'
-export LESS_TERMCAP_ue=$'\E[0m'
-export LESS_TERMCAP_us=$'\E[01;32m'
-
-ZSH=$HOME/.oh-my-zsh
-ZSH_THEME="refined"
-
 plugins=(git zsh-syntax-highlighting)
 fpath=(/usr/local/share/zsh-completions $fpath)
 
 source $ZSH/oh-my-zsh.sh
+source $HOME/.asdf/asdf.sh
+source $HOME/.asdf/completions/asdf.bash
+
+autoload -U promptinit; promptinit
+
+prompt pure
+PROMPT='%(?.%F{magenta}.%F{red}❯%F{magenta})❯%f '
+
 
 # Put any proprietary or private functions/values in ~/.private, and this will source them
 if [ -f $HOME/.private ]; then
@@ -74,5 +64,3 @@ pips() {
 }
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-source $HOME/.asdf/asdf.sh
-source $HOME/.asdf/completions/asdf.bash

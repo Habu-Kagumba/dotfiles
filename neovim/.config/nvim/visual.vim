@@ -65,7 +65,7 @@ function! StatusLineMode()
     endif
 
     if cur_mode == "NORMAL"
-        exe 'hi! StatusLine ctermfg=236'
+        exe 'hi! StatusLine ctermfg=249'
         exe 'hi! myModeColor cterm=bold ctermbg=148 ctermfg=22'
     elseif cur_mode == "INSERT"
         exe 'hi! myModeColor cterm=bold ctermbg=23 ctermfg=231'
