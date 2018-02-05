@@ -36,7 +36,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'janko-m/vim-test'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'ludwig/split-manpage.vim'
-Plug 'bling/vim-bufferline'
+Plug 'ap/vim-buftabline'
 
 let g:make = 'gmake'
 if exists('make')
