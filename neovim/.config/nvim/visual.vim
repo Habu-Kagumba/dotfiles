@@ -88,11 +88,11 @@ endfunction
 
 function! StatusLineLeftInfo()
     let branch = fugitive#head()
-    let filename = '' != expand('%:t') ? expand('%:t') : '[No Name]'
     if branch !=# ''
-        return printf("%s | %s", branch, filename)
+        return printf("%s |", branch)
+    else
+        return ''
     endif
-    return filename
 endfunction
 
 exe 'hi! myInfoColor ctermbg=240 ctermfg=252'
@@ -108,6 +108,7 @@ set statusline+=%*
 " left information bar (after mode)
 set statusline+=%#myInfoColor#
 set statusline+=\ %{StatusLineLeftInfo()}
+set statusline+=\ %<%f%h%m
 set statusline+=\ %*
 
 " go command status (requires vim-go)
