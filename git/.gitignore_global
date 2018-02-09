@@ -74,3 +74,6 @@ Temporary Items
 
 # asdf
 .tool-versions
+
+# JS
+.tern-project

@@ -2,6 +2,7 @@ alias ag='ag --path-to-ignore ~/.agignore'
 alias vim='nvim'
 
 alias jstags='find . -type f -iregex ".*\.js$" -not -path "./node_modules/*" -exec jsctags {} -f \; | sed "/^$/d" | sort > tags'
+alias jstagsa='find . -type f -iregex ".*\.js$" -exec jsctags {} -f \; | sed "/^$/d" | sort > tags'
 
 alias jscode='cd $HOME/Dev/JS-code'
 alias rbcode='cd $HOME/Dev/Ruby-code'
