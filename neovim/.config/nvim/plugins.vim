@@ -85,6 +85,9 @@ Plug 'othree/yajs.vim'
 Plug 'othree/es.next.syntax.vim'
 Plug 'moll/vim-node'
 
+" Typescript
+Plug 'mhartington/nvim-typescript'
+
 " Python
 Plug 'davidhalter/jedi-vim'
 

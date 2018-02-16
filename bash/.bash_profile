@@ -9,6 +9,7 @@ alias rbcode='cd $HOME/Dev/Ruby-code'
 alias pycode='cd $HOME/Dev/Python-code'
 alias gocode='cd $HOME/Dev/Go-code'
 alias opscode='cd $HOME/Dev/DevOps-code'
+alias androidcode='cd $HOME/Dev/Android-code'
 
 alias dc='docker-compose'
 alias dm='docker-machine'
