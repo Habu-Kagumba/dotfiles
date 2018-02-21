@@ -108,6 +108,9 @@ if has('python')
 endif
 Plug 'derekwyatt/vim-scala'
 
+" Java
+Plug 'artur-shaik/vim-javacomplete2'
+
 " Perl
 Plug 'vim-perl/vim-perl', { 'for': 'perl', 'do': 'make clean carp dancer highlight-all-pragmas moose test-more try-tiny' }
 
