@@ -41,6 +41,9 @@ let g:tern#arguments = ['--persistent']
 
 nnoremap <silent> <F8> :!clear; make %<<CR>
 
+" Editorconfig
+let g:EditorConfig_core_mode = 'external_command'
+
 
 "*****************************************************************************
 "" C
