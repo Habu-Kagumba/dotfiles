@@ -38,6 +38,7 @@ tags
 
 # env files
 .env
+.envrc
 
 #OSX
 .DS_Store
