@@ -15,19 +15,6 @@ nnoremap <silent> <F2> :NERDTreeFind<CR>
 noremap <F3> :NERDTreeToggle<CR>
 
 
-" Neomake
-autocmd! BufWritePost * Neomake
-
-let g:neomake_warning_sign = {
-  \ 'text': '⚠',
-  \ 'texthl': 'WarningMsg',
-  \ }
-let g:neomake_error_sign = {
-  \ 'text': '✗',
-  \ 'texthl': 'ErrorMsg',
-  \ }
-
-
 " Deoplete
 let g:deoplete#omni#functions = {}
 let g:deoplete#omni#functions.javascript = [
@@ -139,15 +126,6 @@ autocmd Filetype html setlocal ts=2 sw=2 expandtab
 "*****************************************************************************
 "" Javascript
 "*****************************************************************************
-let g:neomake_javascript_eslint_maker = {
-    \ 'exe': 'eslint_d',
-    \ 'args': ['--env', 'es6', '-f', 'compact'],
-    \ 'errorformat': '%E%f: line %l\, col %c\, Error - %m,%W%f: line %l\, col %c\, Warning - %m'
-    \ }
-
-let g:neomake_javascript_enabled_makers = ['eslint_d']
-let g:neomake_open_list = 2
-
 let g:javascript_enable_domhtmlcss = 1
 
 " vim-javascript
@@ -184,16 +162,6 @@ augroup vimrc-python
       \ formatoptions+=croq softtabstop=4 smartindent
       \ cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 augroup END
-
-let g:neomake_python_flake8_maker = {
-    \ 'args': ['--ignore=E221,E241,E272,E251,W702,E203,E201,E202',  '--format=default'],
-    \ 'errorformat':
-        \ '%E%f:%l: could not compile,%-Z%p^,' .
-        \ '%A%f:%l:%c: %t%n %m,' .
-        \ '%A%f:%l: %t%n %m,' .
-        \ '%-G%.%#',
-    \ }
-let g:neomake_python_enabled_makers = ['flake8']
 
 " jedi-vim
 let g:jedi#popup_on_dot = 0
