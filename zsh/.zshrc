@@ -27,6 +27,9 @@ ZSH_THEME=""
 plugins=(git zsh-syntax-highlighting)
 fpath=(/usr/local/share/zsh-completions $fpath)
 
+# Fixing https://github.com/robbyrussell/oh-my-zsh/issues/6835
+ZSH_DISABLE_COMPFIX=true
+
 source $ZSH/oh-my-zsh.sh
 source $HOME/.asdf/asdf.sh
 source $HOME/.asdf/completions/asdf.bash
