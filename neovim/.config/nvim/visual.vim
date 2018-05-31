@@ -10,7 +10,7 @@ let no_buffers_menu=1
 if !exists('g:not_finish_vimplug')
     colorscheme paramount
 endif
-set background=light
+set background=dark
 
 set mousemodel=popup
 set t_Co=256
