@@ -26,7 +26,6 @@ Plug 'majutsushi/tagbar'
 Plug 'w0rp/ale'
 Plug 'Yggdroot/indentLine'
 Plug 'sheerun/vim-polyglot'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'pbrisbin/vim-mkdir'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
@@ -37,6 +36,10 @@ Plug 'janko-m/vim-test'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'ludwig/split-manpage.vim'
 Plug 'ap/vim-buftabline'
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
 
 let g:make = 'gmake'
 if exists('make')
@@ -70,7 +73,6 @@ Plug 'vim-scripts/c.vim', {'for': ['c', 'cpp']}
 
 " Go
 Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
-Plug 'zchee/deoplete-go', { 'do': 'make'}
 
 " HTML
 Plug 'hail2u/vim-css3-syntax'
@@ -80,13 +82,12 @@ Plug 'mattn/emmet-vim'
 " Javascript
 Plug 'pangloss/vim-javascript'
 Plug 'ternjs/tern_for_vim'
-Plug 'carlitux/deoplete-ternjs'
 Plug 'othree/yajs.vim'
 Plug 'othree/es.next.syntax.vim'
 Plug 'moll/vim-node'
 
 " Typescript
-Plug 'mhartington/nvim-typescript'
+" Plug 'mhartington/nvim-typescript'
 
 " Python
 Plug 'davidhalter/jedi-vim'

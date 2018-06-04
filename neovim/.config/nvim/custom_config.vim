@@ -15,14 +15,7 @@ nnoremap <silent> <F2> :NERDTreeFind<CR>
 noremap <F3> :NERDTreeToggle<CR>
 
 
-" Deoplete
-let g:deoplete#omni#functions = {}
-let g:deoplete#omni#functions.javascript = [
-  \ 'tern#Complete',
-  \ 'jspc#omni'
-\]
 set completeopt=longest,menuone,preview
-let g:deoplete#sources = {}
 let g:tern#command = ['tern']
 let g:tern#arguments = ['--persistent']
 
@@ -35,6 +28,20 @@ let g:EditorConfig_core_mode = 'external_command'
 let g:ale_fixers = {
 \   'javascript': ['eslint'],
 \}
+
+" Language Server
+let g:LanguageClient_autoStart = 1
+
+" Minimal LSP configuration for JavaScript
+let g:LanguageClient_serverCommands = {}
+if executable('javascript-typescript-stdio')
+  let g:LanguageClient_serverCommands.javascript = ['javascript-typescript-stdio']
+  " Use LanguageServer for omnifunc completion
+  autocmd FileType javascript setlocal omnifunc=LanguageClient#complete
+else
+  echo "javascript-typescript-stdio not installed!\n"
+  :cq
+endif
 
 
 "*****************************************************************************
@@ -242,7 +249,7 @@ vnoremap <leader>rem  :RExtractMethod<cr>
 "" Markdown
 "*****************************************************************************
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
-let g:markdown_fenced_languages = ['html', 'vim', 'ruby', 'python', 'bash=sh', 'go']
+let g:markdown_fenced_languages = ['html', 'vim', 'ruby', 'python', 'bash=sh', 'go', 'javascript']
 
 
 "*****************************************************************************
