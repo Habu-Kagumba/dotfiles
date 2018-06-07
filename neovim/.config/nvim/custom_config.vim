@@ -15,7 +15,6 @@ nnoremap <silent> <F2> :NERDTreeFind<CR>
 noremap <F3> :NERDTreeToggle<CR>
 
 
-set completeopt=longest,menuone,preview
 let g:tern#command = ['tern']
 let g:tern#arguments = ['--persistent']
 
@@ -28,6 +27,9 @@ let g:EditorConfig_core_mode = 'external_command'
 let g:ale_fixers = {
 \   'javascript': ['eslint'],
 \}
+
+" Deoplete
+let g:deoplete#enable_at_startup = 1
 
 " Language Server
 let g:LanguageClient_autoStart = 1
