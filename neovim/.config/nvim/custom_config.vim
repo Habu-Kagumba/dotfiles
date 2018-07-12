@@ -25,7 +25,7 @@ let g:EditorConfig_core_mode = 'external_command'
 
 " ALE
 let g:ale_fixers = {
-\   'javascript': ['eslint'],
+\   'javascript': ['eslint', 'prettier'],
 \}
 
 " Deoplete
