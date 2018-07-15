@@ -28,6 +28,8 @@ let g:ale_fixers = {
 \   'javascript': ['eslint', 'prettier'],
 \}
 
+let g:ale_javascript_prettier_options = '--single-quote --trailing-comma es5'
+
 " Deoplete
 let g:deoplete#enable_at_startup = 1
 
