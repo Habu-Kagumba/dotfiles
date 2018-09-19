@@ -12,6 +12,7 @@ alias opscode='cd $HOME/Dev/DevOps-code'
 alias androidcode='cd $HOME/Dev/Android-code'
 alias javacode='cd $HOME/Dev/Java-code'
 alias devopscode='cd $HOME/Dev/DevOps-code'
+alias elmcode='cd $HOME/Dev/Elm-code'
 
 alias gtr='git tag -l | xargs git tag -d && git fetch --tags'
 

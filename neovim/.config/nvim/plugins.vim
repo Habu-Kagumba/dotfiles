@@ -82,10 +82,12 @@ Plug 'mattn/emmet-vim'
 
 " Javascript
 Plug 'pangloss/vim-javascript'
-Plug 'ternjs/tern_for_vim'
 Plug 'othree/yajs.vim'
 Plug 'othree/es.next.syntax.vim'
 Plug 'moll/vim-node'
+
+" Elm
+Plug 'lambdatoast/elm.vim'
 
 " Typescript
 " Plug 'mhartington/nvim-typescript'

@@ -26,6 +26,7 @@ let g:EditorConfig_core_mode = 'external_command'
 " ALE
 let g:ale_fixers = {
 \   'javascript': ['eslint', 'prettier'],
+\   'typescript': ['tslint', 'prettier']
 \}
 
 let g:ale_javascript_prettier_options = '--single-quote --trailing-comma es5'
