@@ -19,7 +19,6 @@ Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'jiangmiao/auto-pairs'
 Plug 'majutsushi/tagbar'
@@ -41,6 +40,7 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ 'do': 'bash install.sh',
     \ }
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'machakann/vim-highlightedyank'
 
 let g:make = 'gmake'
 if exists('make')
@@ -106,10 +106,10 @@ Plug 'tpope/vim-rails'
 Plug 'tmhedberg/matchit'
 
 " Scala
-if has('python')
-    " sbt-vim
-    Plug 'ktvoelker/sbt-vim'
-endif
+" if has('python')
+"     " sbt-vim
+"     Plug 'ktvoelker/sbt-vim'
+" endif
 Plug 'derekwyatt/vim-scala'
 
 " Java

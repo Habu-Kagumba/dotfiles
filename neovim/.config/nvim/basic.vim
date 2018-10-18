@@ -29,6 +29,7 @@ set hlsearch
 set incsearch
 set ignorecase
 set smartcase
+set inccommand=nosplit
 
 "" Directories for swp files
 set nobackup
