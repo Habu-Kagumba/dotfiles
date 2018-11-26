@@ -2,36 +2,36 @@
 "" Custom configs
 "*****************************************************************************
 
-"" NERDTree configuration
-let g:NERDTreeChDirMode=2
-let g:NERDTreeIgnore=['\.rbc$', '\~$', '\.pyc$', '\.db$', '\.sqlite$', '__pycache__']
-let g:NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$', '\.bak$', '\~$']
-let g:NERDTreeShowBookmarks=1
-let g:nerdtree_tabs_focus_on_files=1
-let g:NERDTreeMapOpenInTabSilent = '<RightMouse>'
-let g:NERDTreeWinSize = 50
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite,*/node_modules/*,*/vendor/*,*/env/*
-nnoremap <silent> <F2> :NERDTreeFind<CR>
-noremap <F3> :NERDTreeToggle<CR>
 
+"*****************************************************************************
+"" Explorer
+"*****************************************************************************
+nnoremap <silent> <F3> :vs.<CR>
 
-let g:tern#command = ['tern']
-let g:tern#arguments = ['--persistent']
-
+"*****************************************************************************
+"" Make
+"*****************************************************************************
 nnoremap <silent> <F8> :!clear; make %<<CR>
 
-" Editorconfig
+"*****************************************************************************
+"" Editorconfig
+"*****************************************************************************
 let g:EditorConfig_core_mode = 'external_command'
 
-" ALE
+"*****************************************************************************
+"" ALE
+"*****************************************************************************
 let g:ale_fixers = {
 \   'javascript': ['eslint', 'prettier'],
-\   'typescript': ['tslint', 'prettier']
+\   'typescript': ['tslint', 'prettier'],
+\   'html':       ['tidy', 'prettier']
 \}
 
 let g:ale_javascript_prettier_options = '--single-quote --trailing-comma es5'
 
-" Deoplete
+"*****************************************************************************
+"" Deoplete
+"*****************************************************************************
 let g:deoplete#enable_at_startup = 1
 
 " Language Server
@@ -59,6 +59,7 @@ autocmd FileType cpp setlocal tabstop=4 shiftwidth=4 expandtab
 "*****************************************************************************
 "" Go
 "*****************************************************************************
+let g:polyglot_disabled = ['go']
 let g:tagbar_type_go = {
     \ 'ctagstype' : 'go',
     \ 'kinds'     : [  'p:package', 'i:imports:1', 'c:constants', 'v:variables',
@@ -166,6 +167,13 @@ let g:tagbar_type_typescript = {
   \ ]
   \ }
 
+
+"*****************************************************************************
+"" Typescript
+"*****************************************************************************
+autocmd BufNewFile,BufRead *.ts setlocal filetype=typescript
+
+
 "*****************************************************************************
 "" Python
 "*****************************************************************************
@@ -173,28 +181,28 @@ let g:python_host_prog = '/Users/herbertkagumba/.asdf/installs/python/2.7.14/bin
 let g:python3_host_prog = '/Users/herbertkagumba/.asdf/installs/python/3.6.4/bin/python'
 
 " vim-python
-augroup vimrc-python
-  autocmd!
-  autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=8 colorcolumn=79
-      \ formatoptions+=croq softtabstop=4 smartindent
-      \ cinwords=if,elif,else,for,while,try,except,finally,def,class,with
-augroup END
+" augroup vimrc-python
+"   autocmd!
+"   autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=8 colorcolumn=79
+"       \ formatoptions+=croq softtabstop=4 smartindent
+"       \ cinwords=if,elif,else,for,while,try,except,finally,def,class,with
+" augroup END
 
 " jedi-vim
-let g:jedi#popup_on_dot = 0
-let g:jedi#goto_assignments_command = "<leader>g"
-let g:jedi#goto_definitions_command = "<leader>d"
-let g:jedi#documentation_command = "K"
-let g:jedi#usages_command = "<leader>n"
-let g:jedi#rename_command = "<leader>r"
-let g:jedi#show_call_signatures = "0"
-let g:jedi#completions_command = "<C-Space>"
-let g:jedi#smart_auto_mappings = 0
+" let g:jedi#popup_on_dot = 0
+" let g:jedi#goto_assignments_command = "<leader>g"
+" let g:jedi#goto_definitions_command = "<leader>d"
+" let g:jedi#documentation_command = "K"
+" let g:jedi#usages_command = "<leader>n"
+" let g:jedi#rename_command = "<leader>r"
+" let g:jedi#show_call_signatures = "0"
+" let g:jedi#completions_command = "<C-Space>"
+" let g:jedi#smart_auto_mappings = 0
 
 " Syntax highlight
 " Default highlight is better than polyglot
-let g:polyglot_disabled = ['python']
-let python_highlight_all = 1
+" let g:polyglot_disabled = ['python']
+" let python_highlight_all = 1
 
 
 "*****************************************************************************
@@ -265,3 +273,9 @@ nmap <silent> <leader>s :TestFile<CR>
 nmap <silent> <leader>a :TestSuite<CR>
 nmap <silent> <leader>l :TestLast<CR>
 nmap <silent> <leader>g :TestVisit<CR>
+
+
+"*****************************************************************************
+"" EJS
+"*****************************************************************************
+au BufNewFile,BufRead *.ejs set filetype=html

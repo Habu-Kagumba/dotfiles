@@ -7,12 +7,13 @@ alias jstagsa='find . -type f -iregex ".*\.js$" -exec jsctags {} -f \; | sed "/^
 alias jscode='cd $HOME/Dev/JS-code'
 alias rbcode='cd $HOME/Dev/Ruby-code'
 alias pycode='cd $HOME/Dev/Python-code'
-alias gocode='cd $HOME/Dev/Go-code'
+alias gocode='cd $HOME/Dev/Go-code/src/github.com/Habu-Kagumba'
 alias opscode='cd $HOME/Dev/DevOps-code'
 alias androidcode='cd $HOME/Dev/Android-code'
 alias javacode='cd $HOME/Dev/Java-code'
 alias devopscode='cd $HOME/Dev/DevOps-code'
 alias elmcode='cd $HOME/Dev/Elm-code'
+alias sqlcode='cd $HOME/Dev/SQL-code'
 
 alias gtr='git tag -l | xargs git tag -d && git fetch --tags'
 

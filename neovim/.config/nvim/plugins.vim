@@ -15,8 +15,6 @@ call plug#begin(expand('~/.config/nvim/plugged'))
 "*****************************************************************************
 "" Plug install packages
 "*****************************************************************************
-Plug 'scrooloose/nerdtree'
-Plug 'jistr/vim-nerdtree-tabs'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'bronson/vim-trailing-whitespace'
@@ -24,7 +22,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'majutsushi/tagbar'
 Plug 'w0rp/ale'
 Plug 'Yggdroot/indentLine'
-Plug 'sheerun/vim-polyglot'
+" Plug 'sheerun/vim-polyglot'
 Plug 'pbrisbin/vim-mkdir'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
@@ -87,13 +85,13 @@ Plug 'othree/es.next.syntax.vim'
 Plug 'moll/vim-node'
 
 " Elm
-Plug 'lambdatoast/elm.vim'
+" Plug 'lambdatoast/elm.vim'
 
 " Typescript
-" Plug 'mhartington/nvim-typescript'
+Plug 'HerringtonDarkholme/yats.vim'
 
 " Python
-Plug 'davidhalter/jedi-vim'
+" Plug 'davidhalter/jedi-vim'
 
 " Ruby
 Plug 'vim-ruby/vim-ruby'
@@ -110,13 +108,13 @@ Plug 'tmhedberg/matchit'
 "     " sbt-vim
 "     Plug 'ktvoelker/sbt-vim'
 " endif
-Plug 'derekwyatt/vim-scala'
+" Plug 'derekwyatt/vim-scala'
 
 " Java
-Plug 'artur-shaik/vim-javacomplete2'
+" Plug 'artur-shaik/vim-javacomplete2'
 
 " Perl
-Plug 'vim-perl/vim-perl', { 'for': 'perl', 'do': 'make clean carp dancer highlight-all-pragmas moose test-more try-tiny' }
+" Plug 'vim-perl/vim-perl', { 'for': 'perl', 'do': 'make clean carp dancer highlight-all-pragmas moose test-more try-tiny' }
 
 "*****************************************************************************
 "*****************************************************************************
