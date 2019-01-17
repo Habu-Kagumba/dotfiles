@@ -4,11 +4,6 @@
 
 
 "*****************************************************************************
-"" Explorer
-"*****************************************************************************
-nnoremap <silent> <F3> :vs.<CR>
-
-"*****************************************************************************
 "" Make
 "*****************************************************************************
 nnoremap <silent> <F8> :!clear; make %<<CR>
@@ -24,7 +19,8 @@ let g:EditorConfig_core_mode = 'external_command'
 let g:ale_fixers = {
 \   'javascript': ['eslint', 'prettier'],
 \   'typescript': ['tslint', 'prettier'],
-\   'html':       ['tidy', 'prettier']
+\   'html':       ['tidy', 'prettier'],
+\   'scss':       ['stylelint', 'prettier']
 \}
 
 let g:ale_javascript_prettier_options = '--single-quote --trailing-comma es5'
@@ -138,7 +134,7 @@ augroup END
 "" HTML
 "*****************************************************************************
 " for html files, 2 spaces
-autocmd Filetype html setlocal ts=2 sw=2 expandtab
+autocmd Filetype html setlocal ts=4 sw=4 expandtab
 
 
 "*****************************************************************************
@@ -279,3 +275,11 @@ nmap <silent> <leader>g :TestVisit<CR>
 "" EJS
 "*****************************************************************************
 au BufNewFile,BufRead *.ejs set filetype=html
+
+"*****************************************************************************
+"" Dart
+"*****************************************************************************
+let dart_html_in_string=v:true
+let dart_format_on_save = 1
+let dart_style_guide = 2
+autocmd Filetype dart setlocal ts=2 sw=2 expandtab

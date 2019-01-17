@@ -38,7 +38,6 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ 'do': 'bash install.sh',
     \ }
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'machakann/vim-highlightedyank'
 
 let g:make = 'gmake'
 if exists('make')
@@ -115,6 +114,9 @@ Plug 'tmhedberg/matchit'
 
 " Perl
 " Plug 'vim-perl/vim-perl', { 'for': 'perl', 'do': 'make clean carp dancer highlight-all-pragmas moose test-more try-tiny' }
+
+" Dart
+Plug 'dart-lang/dart-vim-plugin'
 
 "*****************************************************************************
 "*****************************************************************************

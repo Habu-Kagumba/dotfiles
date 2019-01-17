@@ -9,6 +9,8 @@ export GOPATH="$HOME/Dev/Go-code/"
 export PATH="$GOPATH/bin:$PATH"
 export PATH="/usr/local/heroku/bin:$PATH"
 export PATH="/Applications/Postgres.app/Contents/Versions/10/bin:$PATH"
+export PATH="$HOME/Packages/flutter/bin:$PATH"
+export PATH="$HOME/.pub-cache/bin:$PATH"
 
 # =================
 #   EXPORTS

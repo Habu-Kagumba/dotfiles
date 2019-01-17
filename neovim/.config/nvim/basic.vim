@@ -120,7 +120,8 @@ execute "digraphs us " . 0x1D64
 execute "digraphs vs " . 0x1D65
 execute "digraphs xs " . 0x2093
 "}}}
-"
+
+
 " Add shebang info to files
 augroup Shebang
   autocmd BufNewFile *.py 0put =\"#!/usr/bin/env python\<nl># -*- coding: iso-8859-15 -*-\<nl>\"|$
@@ -128,3 +129,11 @@ augroup Shebang
   autocmd BufNewFile *.tex 0put =\"%&plain\<nl>\"|$
   autocmd BufNewFile *.\(cc\|hh\) 0put =\"//\<nl>// \".expand(\"<afile>:t\").\" -- \<nl>//\<nl>\"|2|start!
 augroup END
+
+"" Explorer
+nnoremap <silent> <F3> :Vexplore<CR>
+let g:netrw_liststyle=3
+let g:netrw_browse_split=4
+let g:netrw_altv=1
+let g:netrw_winsize=25
+let g:netrw_banner=0
