@@ -54,14 +54,14 @@ fi
 # =====================
 #   Shell Functions
 # =====================
-qfind () {
+function qfind () {
 	find . -exec grep -l -s $1 {} \;
 	return 0
 }
 
 function git() { hub $@; }
 
-pips() {
+function pips() {
 	package_name=$1
 	requirements_file=$2
 	if [[ -z $requirements_file ]]
@@ -70,6 +70,8 @@ pips() {
 	fi
 	pip install $package_name && pip freeze | grep -i $package_name >> $requirements_file
 }
+
+function gi() { curl -L -s https://www.gitignore.io/api/$@ ; }
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
