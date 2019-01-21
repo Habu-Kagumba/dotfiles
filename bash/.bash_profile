@@ -50,3 +50,5 @@ alias tma='tmux attach-session -t "$(basename "$PWD")"'
 alias tmd='tmux detach'
 alias tml='tmux ls'
 alias tmk='tmux kill-session'
+
+alias lg='lazygit'
