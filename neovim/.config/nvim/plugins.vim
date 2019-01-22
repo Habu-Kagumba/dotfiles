@@ -96,8 +96,8 @@ Plug 'HerringtonDarkholme/yats.vim'
 Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-rake'
 Plug 'tpope/vim-projectionist'
-Plug 'ecomba/vim-ruby-refactoring'
 Plug 'tpope/vim-rails'
+Plug 'ruby-formatter/rufo-vim'
 
 " Templating
 Plug 'tmhedberg/matchit'
