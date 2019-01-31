@@ -1,21 +1,31 @@
 #!/usr/bin/env bash
 
-uninstall() {
-  list=`gem list --no-versions`
-  for gem in $list; do
-    gem uninstall $gem -aIx
-  done
-  gem list
-  gem install bundler
+# Pretty utils
+RED=$(tput setaf 1)
+GREEN=$(tput setaf 2)
+POWDER_BLUE=$(tput setaf 153)
+NORMAL=$(tput sgr0)
+
+print_out() {
+    printf "\n\n${POWDER_BLUE}----------------------------------------${NORMAL}"
+    printf "\n\t ${POWDER_BLUE}$1${NORMAL}\n"
+    printf "${POWDER_BLUE}----------------------------------------${NORMAL}\n\n"
 }
 
-#rbenv versions --bare
-RBENVPATH=`rbenv root`
-echo $RBENVPATH
-RUBIES=`ls $RBENVPATH/versions`
+uninstall() {
+    list=`gem list --no-versions`
+    for gem in $list; do
+        gem uninstall $gem -aIx
+    done
+    gem list
+    gem install bundler
+}
+
+ASDFPATH=`asdf where ruby`
+print_out $ASDFPATH
+RUBIES=`ls $ASDFPATH/`
 for ruby in $RUBIES; do
-  echo '---------------------------------------'
-  echo $ruby
-  rbenv local $ruby
-  uninstall
+    print_out $ruby
+    asdf local ruby $ruby
+    uninstall
 done
