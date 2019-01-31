@@ -42,7 +42,7 @@ alias chime_on='sudo nvram -d SystemAudioVolume'
 alias bundle_stub='bundle install --binstubs .bundle/bin && rbenv rehash'
 alias b='bundle'
 alias bx='bundle exec'
-alias bip='bundle install --path .bundle'
+alias bip='bundle install --path .bundle --clean'
 
 ## Add tmux alias here
 alias tm='tmux new-session -s "$(basename "$PWD")"'
