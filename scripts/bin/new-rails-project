@@ -1,0 +1,59 @@
+#!/usr/bin/env bash
+
+project_name=$1
+
+# Pretty utils
+RED=$(tput setaf 1)
+GREEN=$(tput setaf 2)
+POWDER_BLUE=$(tput setaf 153)
+NORMAL=$(tput sgr0)
+
+print_out() {
+  printf "\n\n${POWDER_BLUE}----------------------------------------${NORMAL}"
+  printf "\n\t ${POWDER_BLUE}$1${NORMAL}\n"
+  printf "${POWDER_BLUE}----------------------------------------${NORMAL}\n\n"
+}
+
+grabFiles() {
+    dir=$(cd -P -- "$(dirname -- "$0")" && pwd -P)
+    pushd $dir
+
+    # Gemfile
+    gemfile="$(cat $dir/new-rails/Gemfile)"
+    # .env
+    env=""
+    # Dockerfile
+    dockerfile=$(cat $dir/new-rails/Dockerfile)
+    # Makefile
+    makefile="$(cat $dir/new-rails/Makefile)"
+    # docker-compose.yml
+    dockercompose="$(cat $dir/new-rails/docker-compose.yml)"
+    # entrypoint.sh
+    entrypoint="$(cat $dir/new-rails/entrypoint.sh)"
+
+    popd
+}
+
+initProject() {
+    mkdir "$project_name"
+    cd "$project_name"
+
+    grabFiles
+    # Gemfile
+    echo "$gemfile" > Gemfile
+    # .env
+    echo "$env" > .env
+    # Dockerfile
+    echo "$dockerfile" > Dockerfile
+    # Makefile
+    echo "$makefile" > Makefile
+    # docker-compose.yml
+    echo "$dockercompose" > docker-compose.yml
+    # entrypoint.sh
+    echo "$entrypoint" > entrypoint.sh
+    chmod +x entrypoint.sh
+
+    cd -
+}
+
+initProject
