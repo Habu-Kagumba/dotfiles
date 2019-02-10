@@ -29,6 +29,15 @@ let g:ale_javascript_prettier_options = '--single-quote --trailing-comma es5'
 "" Deoplete
 "*****************************************************************************
 let g:deoplete#enable_at_startup = 1
+let g:deoplete_disable_auto_complete=1
+let g:deoplete#sources = {}
+" Disable the candidates in Comment/String syntaxes.
+call deoplete#custom#source('_',
+    \ 'disabled_syntaxes', ['Comment', 'String'])
+
+call deoplete#custom#option('sources', {
+    \ '_': []
+\})
 
 " Language Server
 let g:LanguageClient_autoStart = 1
@@ -38,11 +47,12 @@ let g:LanguageClient_serverCommands = {}
 if executable('javascript-typescript-stdio')
   let g:LanguageClient_serverCommands.javascript = ['javascript-typescript-stdio']
   " Use LanguageServer for omnifunc completion
-  autocmd FileType javascript setlocal omnifunc=LanguageClient#complete
+  autocmd FileType javascript setlocal completefunc=LanguageClient#complete
 else
   echo "javascript-typescript-stdio not installed!\n"
   :cq
 endif
+
 
 
 "*****************************************************************************

@@ -78,6 +78,7 @@ Plug 'gko/vim-coloresque'
 Plug 'mattn/emmet-vim'
 
 " Javascript
+Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 Plug 'pangloss/vim-javascript'
 Plug 'othree/yajs.vim'
 Plug 'othree/es.next.syntax.vim'
