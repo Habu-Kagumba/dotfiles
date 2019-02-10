@@ -71,6 +71,7 @@ Plug 'vim-scripts/c.vim', {'for': ['c', 'cpp']}
 
 " Go
 Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
+Plug 'zchee/deoplete-go', { 'do': 'make'}
 
 " HTML
 Plug 'hail2u/vim-css3-syntax'
@@ -99,6 +100,7 @@ Plug 'tpope/vim-rake'
 Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-rails'
 Plug 'ruby-formatter/rufo-vim'
+Plug 'takkii/Bignyanco'
 
 " Templating
 Plug 'tmhedberg/matchit'

@@ -42,7 +42,7 @@ call deoplete#custom#option('sources', {
 " Language Server
 let g:LanguageClient_autoStart = 1
 
-" Minimal LSP configuration for JavaScript
+" LSP configuration for JavaScript
 let g:LanguageClient_serverCommands = {}
 if executable('javascript-typescript-stdio')
   let g:LanguageClient_serverCommands.javascript = ['javascript-typescript-stdio']
@@ -52,7 +52,6 @@ else
   echo "javascript-typescript-stdio not installed!\n"
   :cq
 endif
-
 
 
 "*****************************************************************************
