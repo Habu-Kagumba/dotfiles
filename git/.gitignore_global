@@ -80,6 +80,6 @@ Temporary Items
 .tool-versions
 
 # JS
-.tern-project
+.tern*
 jibble_start
 .stylelintrc

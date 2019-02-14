@@ -46,8 +46,10 @@ let g:LanguageClient_autoStart = 1
 let g:LanguageClient_serverCommands = {}
 if executable('javascript-typescript-stdio')
   let g:LanguageClient_serverCommands.javascript = ['javascript-typescript-stdio']
+  let g:LanguageClient_serverCommands.typescript = ['javascript-typescript-stdio']
   " Use LanguageServer for omnifunc completion
   autocmd FileType javascript setlocal completefunc=LanguageClient#complete
+  autocmd FileType typescript setlocal completefunc=LanguageClient#complete
 else
   echo "javascript-typescript-stdio not installed!\n"
   :cq
