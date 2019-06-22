@@ -26,7 +26,7 @@ export FZF_DEFAULT_OPTS='
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME=""
 
-plugins=(git zsh-syntax-highlighting)
+plugins=(git)
 fpath=(/usr/local/share/zsh-completions $fpath)
 
 # Fixing https://github.com/robbyrussell/oh-my-zsh/issues/6835
@@ -76,3 +76,6 @@ function gi() { curl -L -s https://www.gitignore.io/api/$@ ; }
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 eval "$(direnv hook zsh)"
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
