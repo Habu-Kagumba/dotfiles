@@ -157,7 +157,9 @@ let g:javascript_enable_domhtmlcss = 1
 augroup vimrc-javascript
   autocmd!
   autocmd FileType javascript set tabstop=4|set shiftwidth=4|set expandtab softtabstop=4 smartindent
+  autocmd FileType javascript nmap <buffer> <F7> :ALEFix<CR>
   autocmd FileType coffee set tabstop=2|set shiftwidth=2|set expandtab softtabstop=2 smartindent
+  autocmd FileType coffee nmap <buffer> <F7> :ALEFix<CR>
 augroup END
 
 let g:tagbar_type_typescript = {
