@@ -1,30 +1,18 @@
-.PHONY: s c t setup app-setup db-setup migrate
+.PHONY:  server cli test migrate
 
-default: s
+default: server
 
-s:
+server:
 	@echo ">>>> Starting Appication <<<<"
 	docker-compose up --build
 
-c:
+cli:
 	@echo ">>>> Starting console <<<<"
 	docker-compose run web rails c
 
-t:
+test:
 	@echo ">>>> Running specs <<<<"
-	docker-compose run web rspec
-
-setup: db-setup migrate
-
-app-setup:
-	@echo ">>>> Bootstrapping new Application <<<<"
-	docker-compose run web rails new . -d postgresql --skip-yarn --skip-coffee --skip-test-unit
-	@echo "---- Update database config accordingly!"
-	@echo "---- Setup RSpec"
-
-db-setup:
-	@echo ">>>> Setting up database <<<<"
-	docker-compose run web rails db:setup
+	docker-compose run web rspec -fd
 
 migrate:
 	@echo ">>>> Running database migrations <<<<"

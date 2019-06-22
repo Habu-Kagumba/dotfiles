@@ -1,6 +1,5 @@
 FROM habu/rails5
 
-RUN gem install bundler -v 2.0.1
 ENV APP_HOME /app
 RUN mkdir $APP_HOME
 WORKDIR $APP_HOME

@@ -22,6 +22,8 @@ grabFiles() {
     gemfile="$(cat $dir/new-rails/Gemfile)"
     # .env
     env=""
+    # dockerignore
+    dockerignore="$(cat $dir/new-rails/.dockerignore)"
     # Dockerfile
     dockerfile=$(cat $dir/new-rails/Dockerfile)
     # Makefile
@@ -30,6 +32,8 @@ grabFiles() {
     dockercompose="$(cat $dir/new-rails/docker-compose.yml)"
     # entrypoint.sh
     entrypoint="$(cat $dir/new-rails/entrypoint.sh)"
+    # Database Config
+    databaseconfig="$(cat $dir/new-rails/database.yml | sed s/PROJECTNAME/"$project_name"/)"
 
     popd
 }
@@ -43,6 +47,8 @@ initProject() {
     echo "$gemfile" > Gemfile
     # .env
     echo "$env" > .env
+    # dockerignore
+    echo "$dockerignore" > .dockerignore
     # Dockerfile
     echo "$dockerfile" > Dockerfile
     # Makefile
@@ -52,6 +58,8 @@ initProject() {
     # entrypoint.sh
     echo "$entrypoint" > entrypoint.sh
     chmod +x entrypoint.sh
+    # Database Config
+    echo "$databaseconfig" > database.yml
 
     cd -
 }
