@@ -15,9 +15,12 @@ neovim/.config/gocode/*
 neovim/.config/nvim/spell/*
 neovim/.config/direnv/*
 neovim/.config/git/*
+neovim/.config/count-to-6/*
+neovim/.config/workshopper/*
 chef/
 private
 venv
+*.pem
 
 # swap
 [._]*.s[a-w][a-z]
