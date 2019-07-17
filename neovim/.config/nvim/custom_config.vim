@@ -20,7 +20,8 @@ let g:ale_fixers = {
 \   'javascript': ['eslint', 'prettier'],
 \   'typescript': ['tslint', 'prettier'],
 \   'html':       ['tidy', 'prettier'],
-\   'scss':       ['stylelint', 'prettier']
+\   'scss':       ['stylelint', 'prettier'],
+\   'yaml':       ['prettier']
 \}
 
 let g:ale_javascript_prettier_options = '--single-quote --trailing-comma es5'

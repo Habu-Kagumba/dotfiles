@@ -44,6 +44,7 @@ tags
 # env files
 .env
 .envrc
+.envrc-test
 .envrc-old
 
 #OSX
