@@ -23,8 +23,9 @@ alias gtr='git tag -l | xargs git tag -d && git fetch --tags'
 
 alias dc='docker-compose'
 alias dm='docker-machine'
+alias ds='docker stop $(docker ps -a -q)'
 alias drmi='docker rmi -f $(docker images -a -q)'
-alias drmc='docker stop $(docker ps -a -q) && docker rm -f $(docker ps -a -q)'
+alias drmc='ds && docker rm -f $(docker ps -a -q)'
 alias drmv='docker volume rm -f $(docker volume ls -q)'
 alias dclean='drmc & drmi & drmv'
 
