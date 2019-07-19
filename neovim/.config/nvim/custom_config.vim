@@ -153,6 +153,9 @@ autocmd Filetype html setlocal ts=4 sw=4 expandtab
 "" Javascript
 "*****************************************************************************
 let g:javascript_enable_domhtmlcss = 1
+let g:javascript_plugin_jsdoc = 1
+
+nmap <silent> <C-j> <Plug>(jsdoc)
 
 " vim-javascript
 augroup vimrc-javascript

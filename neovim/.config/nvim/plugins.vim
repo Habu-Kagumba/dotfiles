@@ -84,6 +84,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'othree/yajs.vim'
 Plug 'othree/es.next.syntax.vim'
 Plug 'moll/vim-node'
+Plug 'heavenshell/vim-jsdoc'
 
 " Elm
 " Plug 'lambdatoast/elm.vim'
