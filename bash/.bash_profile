@@ -1,3 +1,4 @@
+export LC_ALL=en_US.UTF-8
 alias ag='ag --path-to-ignore ~/.agignore'
 alias vim='nvim'
 
