@@ -36,6 +36,7 @@ brew 'lazygit'
 brew 'libtool'
 brew 'libxslt'
 brew 'libyaml'
+brew 'mosh'
 /* brew 'mongodb' */
 brew 'neovim'
 brew 'noti'
