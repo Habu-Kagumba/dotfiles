@@ -185,6 +185,7 @@ let g:tagbar_type_typescript = {
 "" Typescript
 "*****************************************************************************
 autocmd BufNewFile,BufRead *.ts setlocal filetype=typescript
+let g:nvim_typescript#diagnostics_enable=0
 
 
 "*****************************************************************************
