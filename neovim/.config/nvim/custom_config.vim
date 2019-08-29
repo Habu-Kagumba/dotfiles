@@ -166,26 +166,26 @@ augroup vimrc-javascript
   autocmd FileType coffee nmap <buffer> <F7> :ALEFix<CR>
 augroup END
 
-let g:tagbar_type_typescript = {
-  \ 'ctagstype': 'typescript',
-  \ 'kinds': [
-    \ 'c:classes',
-    \ 'n:modules',
-    \ 'f:functions',
-    \ 'v:variables',
-    \ 'v:varlambdas',
-    \ 'm:members',
-    \ 'i:interfaces',
-    \ 'e:enums',
-  \ ]
-  \ }
+" let g:tagbar_type_typescript = {
+"   \ 'ctagstype': 'typescript',
+"   \ 'kinds': [
+"     \ 'c:classes',
+"     \ 'n:modules',
+"     \ 'f:functions',
+"     \ 'v:variables',
+"     \ 'v:varlambdas',
+"     \ 'm:members',
+"     \ 'i:interfaces',
+"     \ 'e:enums',
+"   \ ]
+"   \ }
 
 
 "*****************************************************************************
 "" Typescript
 "*****************************************************************************
-autocmd BufNewFile,BufRead *.ts setlocal filetype=typescript
-let g:nvim_typescript#diagnostics_enable=0
+" autocmd BufNewFile,BufRead *.ts setlocal filetype=typescript
+" let g:nvim_typescript#diagnostics_enable=0
 
 
 "*****************************************************************************
@@ -284,12 +284,12 @@ nmap <silent> <leader>g :TestVisit<CR>
 "*****************************************************************************
 "" EJS
 "*****************************************************************************
-au BufNewFile,BufRead *.ejs set filetype=html
+" au BufNewFile,BufRead *.ejs set filetype=html
 
 "*****************************************************************************
 "" Dart
 "*****************************************************************************
-let dart_html_in_string=v:true
-let dart_format_on_save = 1
-let dart_style_guide = 2
-autocmd Filetype dart setlocal ts=2 sw=2 expandtab
+" let dart_html_in_string=v:true
+" let dart_format_on_save = 1
+" let dart_style_guide = 2
+" autocmd Filetype dart setlocal ts=2 sw=2 expandtab

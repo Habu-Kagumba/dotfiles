@@ -79,7 +79,7 @@ Plug 'gko/vim-coloresque'
 Plug 'mattn/emmet-vim'
 
 " Javascript
-Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+" Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 Plug 'pangloss/vim-javascript'
 Plug 'othree/yajs.vim'
 Plug 'othree/es.next.syntax.vim'
@@ -90,7 +90,7 @@ Plug 'heavenshell/vim-jsdoc'
 " Plug 'lambdatoast/elm.vim'
 
 " Typescript
-Plug 'HerringtonDarkholme/yats.vim'
+" Plug 'HerringtonDarkholme/yats.vim'
 
 " Python
 " Plug 'davidhalter/jedi-vim'
@@ -120,7 +120,7 @@ Plug 'tmhedberg/matchit'
 " Plug 'vim-perl/vim-perl', { 'for': 'perl', 'do': 'make clean carp dancer highlight-all-pragmas moose test-more try-tiny' }
 
 " Dart
-Plug 'dart-lang/dart-vim-plugin'
+" Plug 'dart-lang/dart-vim-plugin'
 
 "*****************************************************************************
 "*****************************************************************************
