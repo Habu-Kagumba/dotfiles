@@ -119,7 +119,6 @@ augroup completion_preview_close
 augroup END
 
 augroup go
-
   au!
   au Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
   au Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
@@ -138,7 +137,6 @@ augroup go
   au FileType go nmap <C-g> :GoDecls<cr>
   au FileType go imap <C-g> <esc>:<C-u>GoDecls<cr>
   au FileType go nmap <leader>rb :<C-u>call <SID>build_go_files()<CR>
-
 augroup END
 
 
@@ -191,8 +189,8 @@ augroup END
 "*****************************************************************************
 "" Python
 "*****************************************************************************
-let g:python_host_prog = '/Users/herbertkagumba/.asdf/installs/python/2.7.14/bin/python'
-let g:python3_host_prog = '/Users/herbertkagumba/.asdf/installs/python/3.6.4/bin/python'
+" let g:python_host_prog = '/Users/herbertkagumba/.asdf/installs/python/2.7.14/bin/python'
+" let g:python3_host_prog = '/Users/herbertkagumba/.asdf/installs/python/3.6.4/bin/python'
 
 " vim-python
 " augroup vimrc-python
