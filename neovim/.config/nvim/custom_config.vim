@@ -189,8 +189,8 @@ augroup END
 "*****************************************************************************
 "" Python
 "*****************************************************************************
-" let g:python_host_prog = '/Users/herbertkagumba/.asdf/installs/python/2.7.14/bin/python'
-" let g:python3_host_prog = '/Users/herbertkagumba/.asdf/installs/python/3.6.4/bin/python'
+let g:python_host_prog = '/Users/herbertkagumba/.asdf/installs/python/2.7.14/bin/python'
+let g:python3_host_prog = '/Users/herbertkagumba/.asdf/installs/python/3.6.4/bin/python'
 
 " vim-python
 " augroup vimrc-python
