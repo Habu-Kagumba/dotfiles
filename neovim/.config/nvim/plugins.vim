@@ -60,6 +60,8 @@ endif
 
 Plug 'honza/vim-snippets'
 
+Plug 'kien/tabman.vim'
+
 "" Color
 Plug 'owickstrom/vim-colors-paramount'
 
@@ -100,7 +102,6 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-rake'
 Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-rails'
-Plug 'ruby-formatter/rufo-vim'
 Plug 'takkii/Bignyanco'
 
 " Templating

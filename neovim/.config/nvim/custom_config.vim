@@ -189,8 +189,8 @@ augroup END
 "*****************************************************************************
 "" Python
 "*****************************************************************************
-let g:python_host_prog = '/Users/herbertkagumba/.asdf/installs/python/2.7.14/bin/python'
-let g:python3_host_prog = '/Users/herbertkagumba/.asdf/installs/python/3.6.4/bin/python'
+let g:python_host_prog = '/usr/bin/python'
+let g:python3_host_prog = '/usr/local/bin/python3'
 
 " vim-python
 " augroup vimrc-python
@@ -257,9 +257,6 @@ let g:tagbar_type_ruby = {
         \ 'F:singleton methods'
     \ ]
 \ }
-
-" Enable rufo (Ruby Format)
-let g:rufo_auto_formatting = 1
 
 
 "*****************************************************************************

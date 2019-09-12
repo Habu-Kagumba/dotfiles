@@ -1,5 +1,7 @@
 source $HOME/.bash_profile
 
+eval "$(rbenv init -)"
+
 # =================
 #   PATH
 # =================
@@ -7,6 +9,8 @@ source $HOME/.bash_profile
 export PATH="$HOME/bin:$PATH"
 export GOPATH="$HOME/Dev/Go-code"
 export PATH="$GOPATH/bin:$PATH"
+export PATH="$HOME/.npm-global/bin:$PATH"
+export PATH="/usr/local/opt/openssl/bin:$PATH"
 
 # =================
 #   EXPORTS
@@ -29,8 +33,6 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 ZSH_DISABLE_COMPFIX=true
 
 source $ZSH/oh-my-zsh.sh
-source $HOME/.asdf/asdf.sh
-source $HOME/.asdf/completions/asdf.bash
 
 autoload -U promptinit; promptinit
 
@@ -68,6 +70,14 @@ function pips() {
 }
 
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ; }
+
+function rpt() {
+    number=$1
+    shift
+    for n in $(seq $number); do
+      $@
+    done
+}
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 

@@ -95,5 +95,3 @@
 
 [hub]
     protocol = https
-[commit]
-	template = /Users/herbertkagumba/.stCommitMsg
