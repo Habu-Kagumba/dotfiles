@@ -1,4 +1,4 @@
-FROM habu/rails5
+FROM habu/rails6
 
 ENV APP_HOME /app
 RUN mkdir $APP_HOME

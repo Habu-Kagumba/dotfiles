@@ -288,3 +288,5 @@ nmap <silent> <leader>g :TestVisit<CR>
 " let dart_format_on_save = 1
 " let dart_style_guide = 2
 " autocmd Filetype dart setlocal ts=2 sw=2 expandtab
+
+nmap <silent> <leader>json :%!python -m json.tool<CR>

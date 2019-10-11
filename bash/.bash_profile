@@ -12,7 +12,6 @@ alias gocodeold='cd $GOPATH'
 alias gocode='cd $GOPATH/code'
 alias opscode='cd $HOME/Dev/DevOps-code'
 alias javacode='cd $HOME/Dev/Java-code'
-alias devopscode='cd $HOME/Dev/DevOps-code'
 alias elmcode='cd $HOME/Dev/Elm-code'
 alias sqlcode='cd $HOME/Dev/SQL-code'
 alias mobilecode='cd $HOME/Dev/Mobile'
@@ -42,10 +41,11 @@ alias htop='sudo htop'
 alias chime_off='sudo nvram SystemAudioVolume=%80'
 alias chime_on='sudo nvram -d SystemAudioVolume'
 
-alias bundle_stub='bundle install --binstubs .bundle/bin && rbenv rehash'
+alias bstub='bundle install --binstubs .bundle/bin && rbenv rehash'
 alias b='bundle'
 alias bx='bundle exec'
 alias bip='bundle install --path .bundle --clean'
+alias bu='bundle update'
 
 ## Add tmux alias here
 alias tm='tmux new-session -s "$(basename "$PWD")"'
@@ -55,3 +55,4 @@ alias tml='tmux ls'
 alias tmk='tmux kill-session'
 
 alias lg='lazygit'
+export GPG_TTY=$(tty)
