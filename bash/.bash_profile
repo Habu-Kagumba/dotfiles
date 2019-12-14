@@ -17,6 +17,7 @@ alias sqlcode='cd $HOME/Dev/SQL-code'
 alias mobilecode='cd $HOME/Dev/Mobile'
 alias androidcode='cd $HOME/Dev/Mobile/Android-code'
 alias ioscode='cd $HOME/Dev/Mobile/iOS-code'
+alias haskellcode='cd $HOME/Dev/Haskell-code'
 
 alias gtr='git tag -l | xargs git tag -d && git fetch --tags'
 
