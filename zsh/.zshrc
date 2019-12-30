@@ -1,6 +1,6 @@
 source $HOME/.bash_profile
 
-eval "$(rbenv init -)"
+# eval "$(rbenv init -)"
 
 # =================
 #   PATH
@@ -33,6 +33,8 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 ZSH_DISABLE_COMPFIX=true
 
 source $ZSH/oh-my-zsh.sh
+source $HOME/.asdf/asdf.sh
+source $HOME/.asdf/completions/asdf.bash
 
 autoload -U promptinit; promptinit
 
