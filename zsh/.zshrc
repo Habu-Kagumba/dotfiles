@@ -1,6 +1,6 @@
 source $HOME/.bash_profile
 
-# eval "$(rbenv init -)"
+eval "$(rbenv init -)"
 
 # =================
 #   PATH

@@ -84,19 +84,6 @@ set mouse=a
 " relativenumber
 set rnu
 
-" switch number style
-function! NumberToggle()
-  if(&relativenumber == 1)
-    set nornu
-    set nu
-  else
-    set rnu
-    set nonu
-  endif
-endfunc
-
-nnoremap <C-m> :call NumberToggle()<cr>
-
 " re-indent whole file
 map <F7> mzgg=G`z`
 
