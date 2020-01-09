@@ -16,8 +16,16 @@ let g:EditorConfig_core_mode = 'external_command'
 "*****************************************************************************
 "" ALE
 "*****************************************************************************
+let g:ale_linters = {
+\   'javascript': ['standard', 'prettier'],
+\   'typescript': ['tslint', 'prettier'],
+\   'html':       ['tidy', 'prettier'],
+\   'scss':       ['stylelint', 'prettier'],
+\   'yaml':       ['prettier']
+\}
+
 let g:ale_fixers = {
-\   'javascript': ['eslint', 'prettier'],
+\   'javascript': ['standard', 'prettier'],
 \   'typescript': ['tslint', 'prettier'],
 \   'html':       ['tidy', 'prettier'],
 \   'scss':       ['stylelint', 'prettier'],
@@ -158,32 +166,39 @@ nmap <silent> <Leader>j <Plug>(jsdoc)
 " vim-javascript
 augroup vimrc-javascript
   autocmd!
-  autocmd FileType javascript set tabstop=4|set shiftwidth=4|set expandtab softtabstop=4 smartindent
+  autocmd FileType javascript set tabstop=2|set shiftwidth=2|set expandtab softtabstop=2 smartindent
   autocmd FileType javascript nmap <buffer> <F7> :ALEFix<CR>
   autocmd FileType coffee set tabstop=2|set shiftwidth=2|set expandtab softtabstop=2 smartindent
   autocmd FileType coffee nmap <buffer> <F7> :ALEFix<CR>
 augroup END
 
-" let g:tagbar_type_typescript = {
-"   \ 'ctagstype': 'typescript',
-"   \ 'kinds': [
-"     \ 'c:classes',
-"     \ 'n:modules',
-"     \ 'f:functions',
-"     \ 'v:variables',
-"     \ 'v:varlambdas',
-"     \ 'm:members',
-"     \ 'i:interfaces',
-"     \ 'e:enums',
-"   \ ]
-"   \ }
+let g:tagbar_type_typescript = {
+  \ 'ctagstype': 'typescript',
+  \ 'kinds': [
+    \ 'c:classes',
+    \ 'n:modules',
+    \ 'f:functions',
+    \ 'v:variables',
+    \ 'v:varlambdas',
+    \ 'm:members',
+    \ 'i:interfaces',
+    \ 'e:enums',
+  \ ]
+  \ }
 
 
 "*****************************************************************************
 "" Typescript
 "*****************************************************************************
-" autocmd BufNewFile,BufRead *.ts setlocal filetype=typescript
-" let g:nvim_typescript#diagnostics_enable=0
+autocmd BufNewFile,BufRead *.ts setlocal filetype=typescript
+let g:nvim_typescript#diagnostics_enable=0
+autocmd FileType typescript set tabstop=2|set shiftwidth=2|set expandtab softtabstop=2 smartindent
+
+
+"*****************************************************************************
+"" JSON
+"*****************************************************************************
+autocmd FileType json set tabstop=2|set shiftwidth=2|set expandtab softtabstop=2 smartindent
 
 
 "*****************************************************************************

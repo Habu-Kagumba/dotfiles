@@ -65,6 +65,9 @@ Plug 'kien/tabman.vim'
 "" Color
 Plug 'owickstrom/vim-colors-paramount'
 
+"" Markdown
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
+
 "*****************************************************************************
 "" Custom bundles
 "*****************************************************************************
@@ -92,7 +95,7 @@ Plug 'heavenshell/vim-jsdoc'
 " Plug 'lambdatoast/elm.vim'
 
 " Typescript
-" Plug 'HerringtonDarkholme/yats.vim'
+Plug 'HerringtonDarkholme/yats.vim'
 
 " Python
 " Plug 'davidhalter/jedi-vim'

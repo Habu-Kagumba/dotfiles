@@ -1,0 +1,12 @@
+# /Users/herbertkagumba/.config/tmuxinator/core.yml
+
+name: core
+root: ~/bitpesa-core-integration
+
+windows:
+  - editor:
+      layout: main-vertical
+      panes:
+        -
+        -
+        - cd setup

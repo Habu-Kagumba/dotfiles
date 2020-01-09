@@ -1,0 +1,36 @@
+# /Users/herbertkagumba/.config/tmuxinator/projects.yml
+
+name: projects
+root: ~/projects
+
+windows:
+  - root:
+      layout: main-vertical
+      panes:
+        -
+        - ./stop_apps.sh && ./update_apps.sh && ./start_apps.sh
+        -
+  - api:
+      layout: main-vertical
+      panes:
+        - api
+        - api
+        - api
+  - admin:
+      layout: main-vertical
+      panes:
+        - admin
+        - admin
+        - admin
+  - frontend:
+      layout: main-vertical
+      panes:
+        - frontend
+        - frontend
+        - frontend
+  - developers:
+      layout: main-vertical
+      panes:
+        - developers
+        - developers
+        - developers

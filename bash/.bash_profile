@@ -17,6 +17,9 @@ alias sqlcode='cd $HOME/Dev/SQL-code'
 alias mobilecode='cd $HOME/Dev/Mobile'
 alias androidcode='cd $HOME/Dev/Mobile/Android-code'
 alias ioscode='cd $HOME/Dev/Mobile/iOS-code'
+alias qacode='cd $HOME/Dev/QA-code'
+alias docscode='cd $HOME/Dev/Docs-code'
+alias phpcode='cd $HOME/Dev/PHP-code'
 
 alias gtr='git tag -l | xargs git tag -d && git fetch --tags'
 
@@ -53,6 +56,11 @@ alias tma='tmux attach-session -t "$(basename "$PWD")"'
 alias tmd='tmux detach'
 alias tml='tmux ls'
 alias tmk='tmux kill-session'
+alias mx='tmuxinator'
 
 alias lg='lazygit'
 export GPG_TTY=$(tty)
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/herbertkagumba/.sdkman"
+[[ -s "/Users/herbertkagumba/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/herbertkagumba/.sdkman/bin/sdkman-init.sh"

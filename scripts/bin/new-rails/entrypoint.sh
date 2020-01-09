@@ -21,4 +21,4 @@ if [ ! -d app ]; then
     rails g rspec:install
 fi
 
-bundle exec puma -C config/puma.rb
+bundle exec rails s -p 8080

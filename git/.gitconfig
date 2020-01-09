@@ -1,6 +1,7 @@
 [user]
 	name = Herbert Kagumba
 	email = habukagumba@gmail.com
+	signingkey = E1024A1F021639F9
 [core]
     editor = /usr/local/bin/nvim
 	excludesfile = /Users/herbertkagumba/.gitignore_global
@@ -95,3 +96,5 @@
 
 [hub]
     protocol = https
+[commit]
+	template = /Users/herbertkagumba/.stCommitMsg
