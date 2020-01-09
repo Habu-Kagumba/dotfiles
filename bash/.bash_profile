@@ -20,6 +20,7 @@ alias ioscode='cd $HOME/Dev/Mobile/iOS-code'
 alias qacode='cd $HOME/Dev/QA-code'
 alias docscode='cd $HOME/Dev/Docs-code'
 alias phpcode='cd $HOME/Dev/PHP-code'
+alias haskellcode='cd $HOME/Dev/Haskell-code'
 
 alias gtr='git tag -l | xargs git tag -d && git fetch --tags'
 

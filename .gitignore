@@ -2,3 +2,6 @@ tags.*
 .DS_Store
 *.sql
 neovim/.config/htop
+neovim/.config/coc
+neovim/.config/esnext-generation
+neovim/.config/learn-generators

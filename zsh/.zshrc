@@ -1,6 +1,6 @@
 source $HOME/.bash_profile
 
-eval "$(rbenv init -)"
+# eval "$(rbenv init -)"
 
 # =================
 #   PATH
@@ -34,6 +34,8 @@ ZSH_DISABLE_COMPFIX=true
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/.sdkman/bin/sdkman-init.sh
+source $HOME/.asdf/asdf.sh
+source $HOME/.asdf/completions/asdf.bash
 
 autoload -U promptinit; promptinit
 
@@ -89,10 +91,6 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 # added by travis gem
 [ -f /Users/herbertkagumba/.travis/travis.sh ] && source /Users/herbertkagumba/.travis/travis.sh
-
-. /usr/local/opt/asdf/asdf.sh
-
-. /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/herbertkagumba/.sdkman"
