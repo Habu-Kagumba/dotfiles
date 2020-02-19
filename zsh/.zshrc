@@ -31,7 +31,6 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 ZSH_DISABLE_COMPFIX=true
 
 source $ZSH/oh-my-zsh.sh
-source $HOME/.sdkman/bin/sdkman-init.sh
 source $HOME/.asdf/asdf.sh
 source $HOME/.asdf/completions/asdf.bash
 
@@ -85,11 +84,3 @@ function rpt() {
 eval "$(direnv hook zsh)"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-
-# added by travis gem
-[ -f /Users/herbertkagumba/.travis/travis.sh ] && source /Users/herbertkagumba/.travis/travis.sh
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/herbertkagumba/.sdkman"
-[[ -s "/Users/herbertkagumba/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/herbertkagumba/.sdkman/bin/sdkman-init.sh"
