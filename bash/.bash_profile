@@ -21,6 +21,7 @@ alias qacode='cd $HOME/Dev/QA-code'
 alias docscode='cd $HOME/Dev/Docs-code'
 alias phpcode='cd $HOME/Dev/PHP-code'
 alias haskellcode='cd $HOME/Dev/Haskell-code'
+alias netcode='cd $HOME/Dev/Net-Code'
 
 alias gtr='git tag -l | xargs git tag -d && git fetch --tags'
 
@@ -60,8 +61,3 @@ alias tmk='tmux kill-session'
 alias mx='tmuxinator'
 
 alias lg='lazygit'
-export GPG_TTY=$(tty)
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/herbertkagumba/.sdkman"
-[[ -s "/Users/herbertkagumba/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/herbertkagumba/.sdkman/bin/sdkman-init.sh"
