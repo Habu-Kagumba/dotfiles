@@ -9,28 +9,6 @@
 nnoremap <silent> <F8> :!clear; make %<<CR>
 
 "*****************************************************************************
-"" ALE
-"*****************************************************************************
-let g:ale_linters = {
-\   'javascript': ['standard', 'prettier'],
-\   'typescript': ['tslint', 'prettier'],
-\   'html':       ['tidy', 'prettier'],
-\   'scss':       ['stylelint', 'prettier'],
-\   'yaml':       ['prettier']
-\}
-
-let g:ale_fixers = {
-\   'javascript': ['standard', 'prettier'],
-\   'typescript': ['tslint', 'prettier'],
-\   'html':       ['tidy', 'prettier'],
-\   'scss':       ['stylelint', 'prettier'],
-\   'yaml':       ['prettier'],
-\   'ruby':       ['rubocop']
-\}
-
-let g:ale_javascript_prettier_options = '--single-quote --trailing-comma es5'
-
-"*****************************************************************************
 "" C
 "*****************************************************************************
 autocmd FileType c setlocal tabstop=4 shiftwidth=4 expandtab
@@ -132,9 +110,7 @@ nmap <silent> <Leader>j <Plug>(jsdoc)
 augroup vimrc-javascript
   autocmd!
   autocmd FileType javascript set tabstop=2|set shiftwidth=2|set expandtab softtabstop=2 smartindent
-  autocmd FileType javascript nmap <buffer> <F7> :ALEFix<CR>
   autocmd FileType coffee set tabstop=2|set shiftwidth=2|set expandtab softtabstop=2 smartindent
-  autocmd FileType coffee nmap <buffer> <F7> :ALEFix<CR>
 augroup END
 
 
@@ -142,7 +118,9 @@ augroup END
 "" Typescript
 "*****************************************************************************
 autocmd BufNewFile,BufRead *.ts setlocal filetype=typescript
+autocmd BufNewFile,BufRead *.tsx setlocal filetype=typescriptreact
 let g:nvim_typescript#diagnostics_enable=0
+autocmd FileType typescriptreact set tabstop=4|set shiftwidth=4|set expandtab softtabstop=4 smartindent
 autocmd FileType typescript set tabstop=2|set shiftwidth=2|set expandtab softtabstop=2 smartindent
 
 let g:tagbar_type_typescript = {
@@ -413,3 +391,8 @@ function! CycleNumbering() abort
 endfunction
 
 nnoremap <C-m> :call CycleNumbering()<cr>
+
+"*****************************************************************************
+"" EditorConfig
+"*****************************************************************************
+let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']

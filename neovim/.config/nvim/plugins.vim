@@ -20,15 +20,15 @@ Plug 'tpope/vim-fugitive'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'jiangmiao/auto-pairs'
 Plug 'majutsushi/tagbar'
-Plug 'w0rp/ale'
 Plug 'Yggdroot/indentLine'
 Plug 'pbrisbin/vim-mkdir'
-" Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'EinfachToll/DidYouMean'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'ap/vim-buftabline'
+Plug 'editorconfig/editorconfig-vim'
 
 let g:make = 'gmake'
 if exists('make')
@@ -44,7 +44,6 @@ Plug 'neoclide/coc-lists', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-highlight', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-prettier', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-eslint', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-tslint', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-stylelint', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
