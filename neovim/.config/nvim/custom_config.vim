@@ -148,7 +148,7 @@ autocmd FileType json set tabstop=2|set shiftwidth=2|set expandtab softtabstop=2
 "" Python
 "*****************************************************************************
 let g:python_host_prog = '/usr/bin/python'
-let g:python3_host_prog = '/usr/local/bin/python3'
+let g:python3_host_prog = '/usr/bin/python3'
 
 " vim-python
 " augroup vimrc-python
