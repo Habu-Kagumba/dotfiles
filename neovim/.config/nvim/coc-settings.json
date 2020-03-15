@@ -8,5 +8,12 @@
   "solargraph.definitions": true,
   "solargraph.rename": true,
   "solargraph.references": true,
-  "solargraph.folding": true
+  "solargraph.folding": true,
+  "languageserver": {
+    "golang": {
+      "command": "gopls",
+      "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
+      "filetypes": ["go"]
+    }
+  }
 }
