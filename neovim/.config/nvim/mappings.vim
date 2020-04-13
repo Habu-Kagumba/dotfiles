@@ -118,3 +118,30 @@ vnoremap K :m '<-2<CR>gv=gv
 
 "" Open current line on GitHub
 nnoremap <Leader>o :.Gbrowse<CR>
+
+" Maps ESC to exit terminal's insert mode
+if has('nvim')
+    tnoremap <Esc> <C-\><C-n>
+endif
+
+" Maps ctrl-b + c to open a new tab window
+nnoremap <C-t> :tabnew term://zsh<CR>
+tnoremap <C-t> <C-\><C-n>:tabnew term://zsh<CR>
+
+" Maps ctrl-b + " to open a new horizontal split with a terminal
+nnoremap <C-t>" :split term://zsh<CR>
+tnoremap <C-t>" <C-\><C-n>:split term://zsh<CR>
+
+" Maps ctrl-b + % to open a new vertical split with a terminal
+nnoremap <C-t>% :vsplit term://zsh<CR>
+tnoremap <C-t>% <C-\><C-n>:vsplit term://zsh<cr>
+
+augroup neovim_terminal
+  autocmd!
+
+  " Enter Terminal-mode (insert) automatically
+  autocmd TermOpen * startinsert
+
+  " Disables number lines on terminal buffers
+  autocmd TermOpen * :set nonumber norelativenumber
+augroup END
