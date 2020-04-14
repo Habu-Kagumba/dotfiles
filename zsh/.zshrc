@@ -10,6 +10,7 @@ export PATH="$GOPATH/bin:$PATH"
 export PATH="$HOME/.npm-global/bin:$PATH"
 export PATH="/usr/local/opt/openssl/bin:$PATH"
 export PATH="/Applications/Postgres.app/Contents/Versions/10/bin:$PATH"
+export PATH="$HOME/.asdf/installs/rust/1.42.0/bin:$PATH"
 
 # =================
 #   EXPORTS
