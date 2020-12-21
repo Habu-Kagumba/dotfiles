@@ -1,6 +1,17 @@
 source $HOME/.bash_profile
 
 # =================
+#   COMPLETIONS
+# =================
+
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+
+  autoload -Uz compinit
+  compinit
+fi
+
+# =================
 #   PATH
 # =================
 
@@ -33,8 +44,7 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 ZSH_DISABLE_COMPFIX=true
 
 source $ZSH/oh-my-zsh.sh
-source $HOME/.asdf/asdf.sh
-source $HOME/.asdf/completions/asdf.bash
+source $(brew --prefix asdf)/asdf.sh
 
 autoload -U promptinit; promptinit
 
