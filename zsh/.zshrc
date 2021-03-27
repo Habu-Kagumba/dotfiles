@@ -20,7 +20,7 @@ export GOPATH="$HOME/Dev/Go-code"
 export PATH="$GOPATH/bin:$PATH"
 export PATH="$HOME/.npm-global/bin:$PATH"
 export PATH="/usr/local/opt/openssl/bin:$PATH"
-export PATH="/Applications/Postgres.app/Contents/Versions/10/bin:$PATH"
+export PATH="/Applications/Postgres.app/Contents/Versions/13/bin:$PATH"
 export PATH="$HOME/.asdf/installs/rust/1.42.0/bin:$PATH"
 
 # =================
@@ -96,3 +96,9 @@ function rpt() {
 eval "$(direnv hook zsh)"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/herbertkagumba/Packages/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/herbertkagumba/Packages/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/herbertkagumba/Packages/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/herbertkagumba/Packages/google-cloud-sdk/completion.zsh.inc'; fi

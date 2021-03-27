@@ -9,6 +9,7 @@
   "solargraph.rename": true,
   "solargraph.references": true,
   "solargraph.folding": true,
+  "solargraph.useBundler": false,
   "languageserver": {
     "golang": {
       "command": "gopls",
@@ -16,5 +17,5 @@
       "filetypes": ["go"]
     }
   },
-  "coc.preferences.formatOnSaveFiletypes": ["rust", "go"]
+  "coc.preferences.formatOnSaveFiletypes": ["rust", "go", "ruby"]
 }

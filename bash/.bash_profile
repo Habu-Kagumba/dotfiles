@@ -26,6 +26,7 @@ alias netcode='cd $HOME/Dev/Net-Code'
 alias rcode='cd $HOME/Dev/R-Code'
 alias rustcode='cd $HOME/Dev/Rust-Code'
 
+alias gcmn='git checkout main'
 alias gtr='git tag -l | xargs git tag -d && git fetch --tags'
 
 alias dc='docker-compose'

@@ -5,3 +5,6 @@ neovim/.config/htop
 neovim/.config/coc
 neovim/.config/esnext-generation
 neovim/.config/learn-generators
+neovim/.config/gcloud
+neovim/.config/firebase
+neovim/.config/iterm2

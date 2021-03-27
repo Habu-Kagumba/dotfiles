@@ -93,3 +93,5 @@
     #
     # cf http://stackoverflow.com/questions/9110310
     amend = !git commit --amend --date=\"$(date -R)\"
+[commit]
+	template = /Users/herbertkagumba/.stCommitMsg
