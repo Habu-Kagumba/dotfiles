@@ -74,7 +74,7 @@ augroup END
 autocmd BufNewFile,BufRead *.ts setlocal filetype=typescript
 autocmd BufNewFile,BufRead *.tsx setlocal filetype=typescriptreact
 let g:nvim_typescript#diagnostics_enable=0
-autocmd FileType typescriptreact set tabstop=4|set shiftwidth=4|set expandtab softtabstop=4 smartindent
+autocmd FileType typescriptreact set tabstop=2|set shiftwidth=2|set expandtab softtabstop=2 smartindent
 autocmd FileType typescript set tabstop=2|set shiftwidth=2|set expandtab softtabstop=2 smartindent
 
 let g:tagbar_type_typescript = {

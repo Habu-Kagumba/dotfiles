@@ -26,9 +26,11 @@ alias netcode='cd $HOME/Dev/Net-Code'
 alias rcode='cd $HOME/Dev/R-Code'
 alias rustcode='cd $HOME/Dev/Rust-Code'
 
+alias gcmn='git checkout main'
 alias gtr='git tag -l | xargs git tag -d && git fetch --tags'
 
 alias dc='docker-compose'
+alias dcb='docker-compose up --build'
 alias dm='docker-machine'
 alias ds='docker stop $(docker ps -a -q)'
 alias drmi='docker rmi -f $(docker images -a -q)'
@@ -52,7 +54,7 @@ alias chime_on='sudo nvram -d SystemAudioVolume'
 alias bstub='bundle install --binstubs .bundle/bin && rbenv rehash'
 alias b='bundle'
 alias bx='bundle exec'
-alias bip='bundle install --path .bundle --clean'
+alias bip='bundle install'
 alias bu='bundle update'
 
 ## Add tmux alias here

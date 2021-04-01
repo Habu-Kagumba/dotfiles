@@ -1,6 +1,17 @@
 source $HOME/.bash_profile
 
 # =================
+#   COMPLETIONS
+# =================
+
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+
+  autoload -Uz compinit
+  compinit
+fi
+
+# =================
 #   PATH
 # =================
 
@@ -9,6 +20,10 @@ export GOPATH="$HOME/Dev/Go-code"
 export PATH="$GOPATH/bin:$PATH"
 export PATH="$HOME/.npm-global/bin:$PATH"
 export PATH="/usr/local/opt/openssl/bin:$PATH"
+<<<<<<< HEAD
+export PATH="/Applications/Postgres.app/Contents/Versions/13/bin:$PATH"
+=======
+>>>>>>> master
 export PATH="$HOME/.asdf/installs/rust/1.42.0/bin:$PATH"
 
 # =================
@@ -32,9 +47,7 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 ZSH_DISABLE_COMPFIX=true
 
 source $ZSH/oh-my-zsh.sh
-source $HOME/.sdkman/bin/sdkman-init.sh
-source $HOME/.asdf/asdf.sh
-source $HOME/.asdf/completions/asdf.bash
+source $(brew --prefix asdf)/asdf.sh
 
 autoload -U promptinit; promptinit
 
@@ -86,10 +99,3 @@ function rpt() {
 eval "$(direnv hook zsh)"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-# added by travis gem
-[ -f /Users/herbertkagumba/.travis/travis.sh ] && source /Users/herbertkagumba/.travis/travis.sh
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/herbertkagumba/.sdkman"
-[[ -s "/Users/herbertkagumba/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/herbertkagumba/.sdkman/bin/sdkman-init.sh"

@@ -9,11 +9,13 @@
   "solargraph.rename": true,
   "solargraph.references": true,
   "solargraph.folding": true,
+  "solargraph.useBundler": false,
   "languageserver": {
     "golang": {
       "command": "gopls",
       "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
       "filetypes": ["go"]
     }
-  }
+  },
+  "coc.preferences.formatOnSaveFiletypes": ["rust", "go", "ruby"]
 }
