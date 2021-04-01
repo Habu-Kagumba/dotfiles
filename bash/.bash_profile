@@ -30,6 +30,7 @@ alias gcmn='git checkout main'
 alias gtr='git tag -l | xargs git tag -d && git fetch --tags'
 
 alias dc='docker-compose'
+alias dcb='docker-compose up --build'
 alias dm='docker-machine'
 alias ds='docker stop $(docker ps -a -q)'
 alias drmi='docker rmi -f $(docker images -a -q)'
