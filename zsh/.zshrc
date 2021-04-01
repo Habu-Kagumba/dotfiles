@@ -6,6 +6,7 @@ source $HOME/.bash_profile
 
 if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+  FPATH=$(brew --prefix)/share/zsh/site-completions:$FPATH
 
   autoload -Uz compinit
   compinit
@@ -14,6 +15,9 @@ fi
 # =================
 #   PATH
 # =================
+
+export LDFLAGS="-L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/bzip2/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/bzip2/include"
 
 export PATH="$HOME/bin:$PATH"
 export GOPATH="$HOME/Dev/Go-code"
@@ -42,10 +46,10 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 ZSH_DISABLE_COMPFIX=true
 
 source $ZSH/oh-my-zsh.sh
-source $(brew --prefix asdf)/asdf.sh
+source $HOME/.asdf/asdf.sh
 
+fpath+=('/Users/herbertkagumba/.asdf/installs/nodejs/14.16.0/.npm/lib/node_modules/pure-prompt/functions')
 autoload -U promptinit; promptinit
-
 prompt pure
 PROMPT='%(?.%F{magenta}.%F{red}❯%F{magenta})❯%f '
 

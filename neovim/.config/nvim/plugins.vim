@@ -37,18 +37,18 @@ endif
 
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}, 'branch': 'release'}
 " Common COC plugins
-Plug 'neoclide/coc-snippets', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-solargraph', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-lists', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-highlight', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-prettier', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-eslint', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-stylelint', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-html', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-rls', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-snippets', {'do': 'npm ci'}
+Plug 'neoclide/coc-solargraph', {'do': 'npm ci'}
+Plug 'neoclide/coc-tsserver', {'do': 'npm ci'}
+Plug 'neoclide/coc-lists', {'do': 'npm ci'}
+Plug 'neoclide/coc-highlight', {'do': 'npm ci'}
+Plug 'neoclide/coc-prettier', {'do': 'npm ci'}
+Plug 'neoclide/coc-eslint', {'do': 'npm ci'}
+Plug 'neoclide/coc-stylelint', {'do': 'npm ci'}
+Plug 'neoclide/coc-css', {'do': 'npm ci'}
+Plug 'neoclide/coc-json', {'do': 'npm ci'}
+Plug 'neoclide/coc-html', {'do': 'npm ci'}
+Plug 'neoclide/coc-rls', {'do': 'npm ci'}
 
 Plug 'honza/vim-snippets'
 
