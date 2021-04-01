@@ -35,7 +35,6 @@ brew 'zsh-syntax-highlighting'
 
 # Dev
 brew 'ansible'
-brew 'asdf'
 brew 'awscli'
 brew 'kubectl'
 brew 'neovim'
