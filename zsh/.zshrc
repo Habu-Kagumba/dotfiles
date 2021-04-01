@@ -20,11 +20,6 @@ export GOPATH="$HOME/Dev/Go-code"
 export PATH="$GOPATH/bin:$PATH"
 export PATH="$HOME/.npm-global/bin:$PATH"
 export PATH="/usr/local/opt/openssl/bin:$PATH"
-<<<<<<< HEAD
-export PATH="/Applications/Postgres.app/Contents/Versions/13/bin:$PATH"
-=======
->>>>>>> master
-export PATH="$HOME/.asdf/installs/rust/1.42.0/bin:$PATH"
 
 # =================
 #   EXPORTS

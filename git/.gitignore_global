@@ -17,6 +17,7 @@ neovim/.config/direnv/*
 neovim/.config/git/*
 neovim/.config/count-to-6/*
 neovim/.config/workshopper/*
+neovim/.config/learn-generators/*
 chef/
 private
 venv
@@ -62,9 +63,7 @@ Icon
 ._*
 
 # Ruby
-.rbenv-gemsets
 .ruby-gemset
-.bundle
 
 # Files that might appear in the root of a volume
 .DocumentRevisions-V100
@@ -86,5 +85,4 @@ Temporary Items
 
 # JS
 .tern*
-jibble_start
 .stylelintrc

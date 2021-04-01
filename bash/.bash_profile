@@ -2,9 +2,6 @@ export LC_ALL=en_US.UTF-8
 alias ag='ag --path-to-ignore ~/.agignore'
 alias vim='nvim'
 
-alias jstags='find . -type f -iregex ".*\.js$" -not -path "./node_modules/*" -exec jsctags {} -f \; | sed "/^$/d" | sort > tags'
-alias jstagsa='find . -type f -iregex ".*\.js$" -exec jsctags {} -f \; | sed "/^$/d" | sort > tags'
-
 alias dotfiles='cd $HOME/dotfiles'
 alias jscode='cd $HOME/Dev/JS-code'
 alias rbcode='cd $HOME/Dev/Ruby-code'
@@ -44,14 +41,11 @@ alias vagdestroy='vagrant destroy'
 alias vagssh='vagrant ssh'
 alias vaghalt='vagrant halt'
 
-alias ipython='ipython --TerminalInteractiveShell.editing_mode=vi'
-
 alias htop='sudo htop'
 
 alias chime_off='sudo nvram SystemAudioVolume=%80'
 alias chime_on='sudo nvram -d SystemAudioVolume'
 
-alias bstub='bundle install --binstubs .bundle/bin && rbenv rehash'
 alias b='bundle'
 alias bx='bundle exec'
 alias bip='bundle install'
