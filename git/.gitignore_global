@@ -18,6 +18,7 @@ neovim/.config/git/*
 neovim/.config/count-to-6/*
 neovim/.config/workshopper/*
 neovim/.config/learn-generators/*
+neovim/.config/nixpkgs/*
 chef/
 private
 venv
