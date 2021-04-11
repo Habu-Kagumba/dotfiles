@@ -12,7 +12,6 @@
     autoconf
     automake
     bzip2
-    ccache
     coreutils
     gcc
     libtool

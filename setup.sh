@@ -74,7 +74,7 @@ cd $HOME
 
 print_out "Setup powered by Nix"
 
-homebrew_setup
+# homebrew_setup
 dotfiles_setup
 nix_setup
 setup
