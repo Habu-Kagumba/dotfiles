@@ -81,7 +81,7 @@ in
 
   programs.neovim = {
     enable = true;
-    package = pkgs.neovim;
+    package = pkgs.neovim-nightly;
     viAlias = true;
     vimAlias = true;
     vimdiffAlias = true;
@@ -92,57 +92,50 @@ in
     extraPackages = with pkgs; [
       pkgsUnstable.fzf
     ];
-    configure = {
-      customRC = builtins.readFile ../neovim/init.vim;
-      packages.myVimPackage = with pkgs.vimPlugins; {
-        # loaded on launch
-        start = [
-          # Colorschemes
-          onedark-vim
-          onehalf
-          vim-one
-          # Essentials
-          auto-pairs
-          DidYouMean
-          fzf-vim
-          fzfWrapper
-          lightline-vim
-          surround
-          tagbar
-          vim-buftabline
-          vim-commentary
-          vim-devicons
-          vim-fugitive
-          vim-mkdir
-          vim-repeat
-          vim-rhubarb
-          vim-surround
-          # Language Support
-          coc.nvim
-          coc-css
-          coc-eslint
-          coc-highlight
-          coc-html
-          coc-json
-          coc-lists
-          coc-prettier
-          coc-rls
-          coc-snippets
-          coc-solargraph
-          coc-stylelint
-          coc-tsserver
-          coc.nvim
-          emmet-vim
-          vim-go
-          vim-javascript
-          vim-nix
-          vim-rake
-          vim-ruby
-          yats.vim
-        ];
-        # manually loadable by calling `:packadd $plugin-name`
-        opt = [ ];
-      };
-    };
+    extraConfig = builtins.readFile ../neovim/init.vim;
+    plugins = with pkgs.vimPlugins; [
+      # Colorschemes
+      onedark-vim
+      onehalf
+      vim-one
+      # Essentials
+      auto-pairs
+      DidYouMean
+      fzf-vim
+      fzfWrapper
+      lightline-vim
+      surround
+      tagbar
+      vim-buftabline
+      vim-commentary
+      vim-devicons
+      vim-fugitive
+      vim-mkdir
+      vim-repeat
+      vim-rhubarb
+      vim-surround
+      # Language Support
+      coc.nvim
+      coc-css
+      coc-eslint
+      coc-highlight
+      coc-html
+      coc-json
+      coc-lists
+      coc-prettier
+      coc-rls
+      coc-snippets
+      coc-solargraph
+      coc-stylelint
+      coc-tsserver
+      coc.nvim
+      emmet-vim
+      vim-go
+      vim-javascript
+      vim-nix
+      vim-rake
+      vim-ruby
+      yats.vim
+    ];
   };
 }

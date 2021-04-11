@@ -27,7 +27,6 @@
     ctags
     exa
     fzf
-    gpg
     httpie
     hub
     jq
