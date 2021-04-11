@@ -22,7 +22,7 @@ nix_setup() {
 	print_out "Nix installing"
 	sh <(curl -L https://nixos.org/nix/install) --darwin-use-unencrypted-nix-store-volume
 
-	echo ". /Users/herbertkagumba/.nix-profile/etc/profile.d/nix.sh" >> ~/.profile
+        source $HOME/.nix-profile/etc/profile.d/nix.sh
 
 	nix-channel --add https://nixos.org/channels/nixpkgs-unstable nixpkgs-unstable
 	nix-channel --update
@@ -74,7 +74,7 @@ cd $HOME
 
 print_out "Setup powered by Nix"
 
-homebrew_setup
+# homebrew_setup
 dotfiles_setup
 nix_setup
 setup
