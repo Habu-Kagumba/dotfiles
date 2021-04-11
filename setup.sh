@@ -22,6 +22,8 @@ nix_setup() {
 	print_out "Nix installing"
 	sh <(curl -L https://nixos.org/nix/install) --darwin-use-unencrypted-nix-store-volume
 
+	echo ". /Users/herbertkagumba/.nix-profile/etc/profile.d/nix.sh" >> ~/.profile
+
 	nix-channel --add https://nixos.org/channels/nixpkgs-unstable nixpkgs-unstable
 	nix-channel --update
 
@@ -35,7 +37,8 @@ nix_setup() {
 homebrew_setup() {
   if ! command -v brew > /dev/null; then
     print_out "Homebrew installing"
-    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    eval $(/opt/homebrew/bin/brew shellenv)
   fi
 
   print_out "Homebrew updating"
@@ -47,7 +50,7 @@ dotfiles_setup() {
 
   # clone dotfiles
   printf "\n${CYAN}Cloning dotfiles${NORMAL}"
-  rm -r "${DOTFILES_DEST}"
+  rm -rf "${DOTFILES_DEST}"
   git clone "${DOTFILES_REPO}" "${DOTFILES_DEST}"
   printf " ${GREEN}✔︎${NORMAL}\n"
 }
