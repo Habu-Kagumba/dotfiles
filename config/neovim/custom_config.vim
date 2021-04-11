@@ -29,20 +29,6 @@ let g:go_def_mapping_enabled = 0
 let g:go_list_type = "quickfix"
 let g:go_fmt_command = "goimports"
 let g:go_fmt_fail_silently = 1
-let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
-let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
-
-let g:go_highlight_types = 1
-let g:go_highlight_fields = 1
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_build_constraints = 1
-let g:go_highlight_generate_tags = 1
-let g:go_highlight_space_tab_error = 0
-let g:go_highlight_array_whitespace_error = 0
-let g:go_highlight_trailing_whitespace_error = 0
-let g:go_highlight_extra_types = 0
 
 
 "*****************************************************************************
@@ -99,37 +85,6 @@ autocmd FileType json set tabstop=2|set shiftwidth=2|set expandtab softtabstop=2
 
 
 "*****************************************************************************
-"" Python
-"*****************************************************************************
-let g:python_host_prog = '/usr/bin/python'
-let g:python3_host_prog = '/usr/bin/python3'
-
-" vim-python
-" augroup vimrc-python
-"   autocmd!
-"   autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=8 colorcolumn=79
-"       \ formatoptions+=croq softtabstop=4 smartindent
-"       \ cinwords=if,elif,else,for,while,try,except,finally,def,class,with
-" augroup END
-
-" jedi-vim
-" let g:jedi#popup_on_dot = 0
-" let g:jedi#goto_assignments_command = "<leader>g"
-" let g:jedi#goto_definitions_command = "<leader>d"
-" let g:jedi#documentation_command = "K"
-" let g:jedi#usages_command = "<leader>n"
-" let g:jedi#rename_command = "<leader>r"
-" let g:jedi#show_call_signatures = "0"
-" let g:jedi#completions_command = "<C-Space>"
-" let g:jedi#smart_auto_mappings = 0
-
-" Syntax highlight
-" Default highlight is better than polyglot
-" let g:polyglot_disabled = ['python']
-" let python_highlight_all = 1
-
-
-"*****************************************************************************
 "" Ruby
 "*****************************************************************************
 let g:rubycomplete_buffer_loading = 1
@@ -149,6 +104,7 @@ iabbr bpry require'pry';binding.pry
 
 " Add the pry debug line with ,bp
 map <Leader>bp orequire'pry';binding.pry<esc>:w<cr>
+
 " Alias for one-handed operation:
 map <Leader><Leader>p <Leader>bp
 
@@ -183,23 +139,11 @@ let g:markdown_fenced_languages = ['html', 'vim', 'ruby', 'python', 'bash=sh', '
 "*****************************************************************************
 " au BufNewFile,BufRead *.ejs set filetype=html
 
-"*****************************************************************************
-"" Dart
-"*****************************************************************************
-" let dart_html_in_string=v:true
-" let dart_format_on_save = 1
-" let dart_style_guide = 2
-" autocmd Filetype dart setlocal ts=2 sw=2 expandtab
-
 nmap <silent> <leader>json :%!python -m json.tool<CR>
 
 "*****************************************************************************
 "" Coc
 "*****************************************************************************
-"
-" if hidden is not set, TextEdit might fail.
-set hidden
-
 " Some servers have issues with backup files, see #649
 set nobackup
 set nowritebackup
@@ -345,8 +289,3 @@ function! CycleNumbering() abort
 endfunction
 
 nnoremap <C-m> :call CycleNumbering()<cr>
-
-"*****************************************************************************
-"" EditorConfig
-"*****************************************************************************
-let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']

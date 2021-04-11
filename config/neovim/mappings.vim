@@ -16,12 +16,6 @@ noremap <Leader>gb :Gblame<CR>
 noremap <Leader>gd :Gvdiff<CR>
 noremap <Leader>gr :Gremove<CR>
 
-" session management
-nnoremap <leader>so :OpenSession<Space>
-nnoremap <leader>ss :SaveSession<Space>
-nnoremap <leader>sd :DeleteSession<CR>
-nnoremap <leader>sc :CloseSession<CR>
-
 "" Tabs
 nnoremap <Tab> gt
 nnoremap <S-Tab> gT
@@ -43,27 +37,20 @@ cnoremap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
 set wildignore+=*.o,*.obj,.git,*.rbc,*.pyc,__pycache__
 let $FZF_DEFAULT_COMMAND =  "find * -path '*/\.*' -prune -o -path 'node_modules/**' -prune -o -path 'target/**' -prune -o -path 'dist/**' -prune -o  -type f -print -o -type l -print 2> /dev/null"
 
-" The Silver Searcher
-if executable('ag')
-  let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
-  set grepprg=ag\ --nogroup\ --nocolor
+" Ripgrep
+if executable('rg')
+  let $FZF_DEFAULT_COMMAND = 'rg --hidden -g ""'
+  set grepprg=rg\ --vimgrep
+  set grepformat=%f:%l:%c:%m
 endif
 
 nnoremap <Leader>b :Buffers<cr>
 noremap <Leader>e :FZF<cr>
-noremap <Leader>f :Ag<cr>
+noremap <Leader>f :Rg<cr>
 noremap <Leader>ge :GFiles<cr>
 noremap \ <C-^><CR>
 set path+=**
 set wildmenu
-
-" Fuzzy Search support
-set rtp+=/usr/local/opt/fzf
-
-" this mapping Enter key to <C-y> to chose the current highlight item
-" and close the selection list, same as other IDEs.
-" CONFLICT with some plugins like tpope/Endwise
-inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 " Tagbar
 nmap <silent> <F4> :TagbarToggle<CR>
@@ -83,12 +70,6 @@ endif
 noremap YY "+y<CR>
 noremap <leader>p "+gP<CR>
 noremap XX "+x<CR>
-
-if has('macunix')
-  " pbcopy for OSX copy/paste
-  vmap <C-x> :!pbcopy<CR>
-  vmap <C-c> :w !pbcopy<CR><CR>
-endif
 
 "" Buffer nav
 noremap <leader>z :bp<CR>
@@ -123,18 +104,6 @@ nnoremap <Leader>o :.Gbrowse<CR>
 if has('nvim')
     tnoremap <Esc> <C-\><C-n>
 endif
-
-" Maps ctrl-b + c to open a new tab window
-nnoremap <C-t> :tabnew term://zsh<CR>
-tnoremap <C-t> <C-\><C-n>:tabnew term://zsh<CR>
-
-" Maps ctrl-b + " to open a new horizontal split with a terminal
-nnoremap <C-t>" :split term://zsh<CR>
-tnoremap <C-t>" <C-\><C-n>:split term://zsh<CR>
-
-" Maps ctrl-b + % to open a new vertical split with a terminal
-nnoremap <C-t>% :vsplit term://zsh<CR>
-tnoremap <C-t>% <C-\><C-n>:vsplit term://zsh<cr>
 
 augroup neovim_terminal
   autocmd!

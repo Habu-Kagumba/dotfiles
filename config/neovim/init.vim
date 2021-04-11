@@ -2,8 +2,6 @@ if has('vim_starting')
   set nocompatible
 endif
 
-source ~/.config/nvim/plugins.vim
-
 " Required:
 filetype plugin indent on
 
