@@ -61,12 +61,12 @@ setup() {
   printf " ${GREEN}✔︎${NORMAL}\n"
 
   printf "\n${CYAN}Neovim language deps${NORMAL}"
-  gem install pry bundler neovim rubocop solargraph
-  pip3 install neovim flake8
+  # gem install pry bundler neovim rubocop solargraph
+  # pip3 install neovim flake8
   printf " ${GREEN}✔︎${NORMAL}\n"
 
   printf "\n${CYAN}Install homebrew apps${NORMAL}"
-  brew bundle --file "${DOTFILES_DEST}/config/macos";
+  brew bundle --file "${DOTFILES_DEST}/config/macos"
   printf " ${GREEN}✔︎${NORMAL}\n"
 }
 
@@ -74,7 +74,7 @@ cd $HOME
 
 print_out "Setup powered by Nix"
 
-# homebrew_setup
+homebrew_setup
 dotfiles_setup
 nix_setup
 setup
