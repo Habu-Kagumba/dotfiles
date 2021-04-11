@@ -106,7 +106,6 @@ in
       vim-one
       # Essentials
       auto-pairs
-      DidYouMean.vim
       fzf-vim
       fzfWrapper
       lightline-vim
