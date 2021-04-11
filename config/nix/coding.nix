@@ -23,7 +23,7 @@ in
     };
     aliases = {
       master = "checkout master";
-      develop = "checkout develop"
+      develop = "checkout develop";
       unstage = "reset HEAD --";
       uncommit = "reset --soft HEAD~1";
       recommit = "commit --amend --no-edit";
