@@ -2,9 +2,9 @@
 
 {
   home.sessionVariables = {
-    NIX_PATH = "$HOME/.nix-defexpr/channels:nixpkgs=/nix/var/nix/profiles/per-user/herbertkagumba/channels/nixpkgs:/nix/var/nix/profiles/per-user/herbertkagumba/channels"
-    GOPATH = "$HOME/Dev/Go-code"
-    PATH = "$HOME/bin:$GOPATH/bin:$HOME/.nix-profile/bin"
+    NIX_PATH = "$HOME/.nix-defexpr/channels:nixpkgs=/nix/var/nix/profiles/per-user/herbertkagumba/channels/nixpkgs:/nix/var/nix/profiles/per-user/herbertkagumba/channels";
+    GOPATH = "$HOME/Dev/Go-code";
+    PATH = "$HOME/bin:$GOPATH/bin:$HOME/.nix-profile/bin";
   }
 
   home.packages = with pkgs; [
