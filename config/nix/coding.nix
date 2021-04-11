@@ -111,16 +111,14 @@ in
       lightline-vim
       surround
       tagbar
-      vim-buftabline
-      vim-commentary
+      commentary
       vim-devicons
-      vim-fugitive
-      vim-mkdir
-      vim-repeat
-      vim-rhubarb
-      vim-surround
+      fugitive
+      vim-automkdir
+      repeat
+      rhubarb
       # Language Support
-      coc.nvim
+      coc-nvim
       coc-css
       coc-eslint
       coc-highlight
@@ -133,14 +131,12 @@ in
       coc-solargraph
       coc-stylelint
       coc-tsserver
-      coc.nvim
       emmet-vim
       vim-go
       vim-javascript
       vim-nix
-      vim-rake
       vim-ruby
-      yats.vim
+      yats-vim
     ];
   };
 }
