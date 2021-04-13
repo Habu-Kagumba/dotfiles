@@ -24,7 +24,7 @@
       # Docker
       dc = "docker-compose";
       dcb = "docker-compose up --build";
-      dclean = "docker stop $(docker ps -a -q) ; docker rm -f $(docker ps -a -q) ; docker rmi -f $(docker images -a -q) ; docker volume rm -f $(docker volume ls -q)";
+      dclean = "docker stop (docker ps -a -q) ; docker rm -f (docker ps -a -q) ; docker rmi -f (docker images -a -q) ; docker volume rm -f (docker volume ls -q)";
       dprune = "docker container prune -f ; docker image prune -f ; docker network prune -f ; docker volume prune -f";
       # Bundle
       b = "bundle";
@@ -32,14 +32,13 @@
       bip = "bundle install";
       bu = "bundle update";
       # TMUX
-      tm = "tmux new-session -s $(basename $PWD)";
-      tma = "tmux attach-session -t $(basename $PWD)";
+      tm = "tmux new-session -s (basename $PWD)";
+      tma = "tmux attach-session -t (basename $PWD)";
       tmd = "tmux detach";
       tml = "tmux ls";
       tmk = "tmux kill-session";
     };
     functions = {
-      git = "hub $argv";
       gi = "curl -sL https://www.gitignore.io/api/$argv";
     };
     plugins = [
@@ -72,7 +71,7 @@
       ###############
       ### General ###
       ###############
-      set-option -g default-shell $HOME/.nix-profile/bin/fish
+      set-option -g default-shell $SHELL
       # Enable mouse support
       set-option -g mouse on
       # Add terminal overrides for better TrueColor support
@@ -85,6 +84,28 @@
       bind - split-window -v
       unbind '"'
       unbind %
+      # Shift arrow to switch windows
+      bind -n S-Left  previous-window
+      bind -n S-Right next-window
+      # Synchronize
+      bind-key s set-window-option synchronize-panes\; display-message "synchronize-panes is now #{?pane_synchronized,on,off}"
+      ###################
+      ### Status Line ###
+      ###################
+      set -g window-status-separator ""
+      set -g status-left "#[fg=colour16,bg=colour254,bold] #S #[fg=colour254,bg=colour236,nobold,nounderscore,noitalics]"
+      setw -g window-status-format "#[fg=colour244,bg=colour236] #I ⦙#[fg=colour250,bg=colour236] #W "
+      setw -g window-status-current-format "#[fg=colour236,bg=colour60,nobold,nounderscore,noitalics] #[fg=colour231,bg=colour60] #I ⦙#[fg=colour231,bg=colour60,bold] #W #[fg=colour60,bg=colour236,nobold,nounderscore,noitalics]"
+
+      # General status bar settings
+      set -g status og
+      set -g status-interval 5
+      set -g status-position bottom
+      set -g status-justify left
+      set -g status-right-length 120
+      set -g status-left-length 120
+      set -g status-bg colour000
+      set -g status-fg colour007
     '';
     plugins = with pkgs; [
       {
@@ -98,42 +119,9 @@
       tmuxPlugins.open
       tmuxPlugins.pain-control
       {
-        plugin = tmuxPlugins.prefix-highlight;
+        plugin = tmuxPlugins.cpu;
         extraConfig = ''
-          # Configure plugin: 'tmux-prefix-highlight'
-          set -g @prefix_highlight_output_prefix ' ﬿ '
-          set -g @prefix_highlight_output_suffix ' '
-          set -g @prefix_highlight_prefix_prompt 'Prfx'
-          set -g @prefix_highlight_fg 'colour000'
-          set -g @prefix_highlight_bg 'colour005'
-          set -g @prefix_highlight_show_copy_mode 'on'
-          set -g @prefix_highlight_copy_mode_prompt 'Copy'
-          set -g @prefix_highlight_copy_mode_attr 'fg=colour000,bg=colour03'
-          set -g @prefix_highlight_empty_prompt 'Tmux'
-          set -g @prefix_highlight_empty_has_affixes 'on'
-          set -g @prefix_highlight_empty_attr 'fg=colour000,bg=colour012'
-          ###################
-          ### Status Line ###
-          ###################
-          ### Windows line configuration 1
-          # window segments in status line
-          # set -g window-status-separator "  〉"
-          set -g window-status-separator " "
-          set-window-option -g window-status-current-format '#[fg=colour008,bg=colour000,noitalics]#[fg=colour010,bg=colour008]#I#[fg=colour008,bg=colour010,noitalics]#[fg=colour008,bg=colour010]▌#[fg=colour000,bg=colour010]#W#[fg=colour010,bg=colour000,noitalics]'
-          set-window-option -g window-status-format "#[fg=colour007] #I #W "
-          set-window-option -g window-status-current-style bg=colour010,fg=colour000
-          # general status bar settings
-          set -g status on
-          set -g status-interval 5
-          set -g status-position top
-          set -g status-justify left
-          set -g status-right-length 120
-          set -g status-bg colour000
-          set -g status-fg colour007
-          # Widgets
-          wg_is_zoomed="#[fg=$color_dark,bg=$color_secondary]#{?window_zoomed_flag,[Z],}#[default]"
-          set -g status-left "#{prefix_highlight} $wg_is_zoomed $wg_session"
-          set -g status-right "#(pyline --tmux cpu mem host time bat)#[default]"
+          set -g status-right "#[fg=colour247,bg=colour236] CPU: #{cpu_percentage} RAM: #{ram_percentage}  BAT: #{battery_percentage} ⦙ %A, %h %d %Y ⦙ %l:%M %p #[fg=colour252,bg=colour236,nobold,nounderscore,noitalics]"
         '';
       }
       {
@@ -161,21 +149,20 @@
           x = 10;
           y = 10;
         };
-        decorations = "none";
         dynamic_title = true;
       };
       draw_bold_text_with_bright_colors = true;
       font = {
         normal = {
-          family = "FiraCode Nerd Font";
-          #style = "Retina";
+          family = "Fira Code";
+          style = "Retina";
         };
         bold = {
-          family = "FiraCode Nerd Font";
+          family = "Fira Code";
           style = "Bold";
         };
         italic = {
-          family = "FantasqueSansMono Nerd Font";
+          family = "Fantasque Sans Mono";
           style = "Italic";
         };
         size = 12.0;

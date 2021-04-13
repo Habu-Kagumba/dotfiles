@@ -9,16 +9,6 @@ in
     }))
   ];
 
-  home.packages = with pkgs; [
-    # Languages
-    go
-    nodejs-12_x
-    pythonFull
-    python3Full
-    ruby
-    yarn
-  ];
-
   programs.git = {
     enable = true;
     userName = "Habu-Kagumba";
@@ -38,20 +28,20 @@ in
       save = "!git add . && git commit --no-verify -m \"WIP: auto save at $(date '+%Y%m%d %H:%M:%S')\"";
       mine = "log --author='Habu-Kagumba'";
     };
-    delta = {
+    delta = { 
       enable = true;
       options = {
         theme = "OneHalfDark";
       };
-    };
+    }; 
     extraConfig = {
       github.user = "Habu-Kagumba";
-      url."git@personal.github.com:Habu-Kagumba/" = {
+      url."git@github.com:Habu-Kagumba/" = {
         insteadOf = [
           "me:"
           "https://github.com/Habu-Kagumba/"
         ];
-      };
+      }; 
     };
     ignores = [
       ### OS generated files
@@ -98,12 +88,10 @@ in
     extraPackages = with pkgs; [
       pkgsUnstable.fzf
     ];
-    extraConfig = builtins.readFile ../neovim/init.vim;
+    extraConfig = builtins.readFile /Users/herbertkagumba/dotfiles/config/neovim/init.vim;
     plugins = with pkgs.vimPlugins; [
       # Colorschemes
-      onedark-vim
-      onehalf
-      vim-one
+      dracula
       # Essentials
       auto-pairs
       fzf-vim

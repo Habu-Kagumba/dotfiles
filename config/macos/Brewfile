@@ -1,3 +1,6 @@
+# Taps
+tap homebrew/cask-versions
+
 # Desktop Apps
 cask '1password'
 cask 'authy'
@@ -5,10 +8,12 @@ cask 'clickup'
 cask 'clipy'
 cask 'daisydisk'
 cask 'figma'
-cask 'grammarly'
+cask 'firefox-nightly'
 cask 'google-chrome'
 cask 'google-drive'
+cask 'grammarly'
 cask 'imageoptim'
+cask 'keybase'
 cask 'local'
 cask 'numi'
 cask 'protonvpn'

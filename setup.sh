@@ -18,20 +18,23 @@ print_out() {
 }
 
 nix_setup() {
-	### Install Nix
-	print_out "Nix installing"
-	sh <(curl -L https://nixos.org/nix/install) --darwin-use-unencrypted-nix-store-volume
+  ### Install Nix
+  print_out "Nix installing"
+  sh <(curl -L https://nixos.org/nix/install) --darwin-use-unencrypted-nix-store-volume
 
-        source $HOME/.nix-profile/etc/profile.d/nix.sh
+  source $HOME/.nix-profile/etc/profile.d/nix.sh
 
-	nix-channel --add https://nixos.org/channels/nixpkgs-unstable nixpkgs-unstable
-	nix-channel --update
+  ### Add unstable channel
+  nix-channel --add https://nixos.org/channels/nixpkgs-unstable nixpkgs-unstable
+  nix-channel --update
 
-	### Install home-manager
-	nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
-	nix-channel --update
-	export NIX_PATH=$HOME/.nix-defexpr/channels${NIX_PATH:+:}$NIX_PATH
-	nix-shell '<home-manager>' -A install
+  ### Install home-manager
+  nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
+  nix-channel --update
+
+  export NIX_PATH=$HOME/.nix-defexpr/channels${NIX_PATH:+:}$NIX_PATH
+
+  nix-shell '<home-manager>' -A install
 }
 
 homebrew_setup() {
@@ -49,30 +52,30 @@ dotfiles_setup() {
   print_out "Setup dotfiles"
 
   # clone dotfiles
-  printf "\n${CYAN}Cloning dotfiles${NORMAL}"
+  printf "\n${CYAN}Cloning dotfiles${NORMAL}\n"
   rm -rf "${DOTFILES_DEST}"
   git clone "${DOTFILES_REPO}" "${DOTFILES_DEST}"
   printf " ${GREEN}✔︎${NORMAL}\n"
 }
 
 setup() {
-  printf "\n${CYAN}Home-manager config${NORMAL}"
+  printf "\n${CYAN}Home-manager config${NORMAL}\n"
   home-manager switch
   printf " ${GREEN}✔︎${NORMAL}\n"
 
-  printf "\n${CYAN}Neovim language deps${NORMAL}"
+  printf "\n${CYAN}Neovim language deps [NOT WORKING]${NORMAL}\n"
   # gem install pry bundler neovim rubocop solargraph
   # pip3 install neovim flake8
   printf " ${GREEN}✔︎${NORMAL}\n"
 
   printf "\n${CYAN}Install homebrew apps${NORMAL}"
-  brew bundle --file "${DOTFILES_DEST}/config/macos"
+  brew bundle --file "${DOTFILES_DEST}/config/macos/Brewfile"
   printf " ${GREEN}✔︎${NORMAL}\n"
 }
 
 cd $HOME
 
-print_out "Setup powered by Nix"
+print_out "Setting up your machine"
 
 homebrew_setup
 dotfiles_setup

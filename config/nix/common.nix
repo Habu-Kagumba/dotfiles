@@ -11,35 +11,37 @@
     # Core
     autoconf
     automake
-    bzip2
     coreutils
     gcc
-    libtool
-    libxslt
-    libyaml
     openssl
-    zlib
 
     # Utils
     bat
     bottom
-    ctags
     exa
     fzf
+    gh
     httpie
-    hub
     jq
     mosh
     noti
     parallel
     readline
-    reattach-to-user-namespace
     ripgrep
     rsync
     tmux
     tor
     tree
+    watch
     wget
+
+    # Languages
+    go
+    nodejs
+    pythonFull
+    python3Full
+    pkgsUnstable.ruby_3_0
+    yarn
   ];
 
   programs.direnv = {
