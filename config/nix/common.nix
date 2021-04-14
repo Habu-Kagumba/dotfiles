@@ -42,6 +42,9 @@
     python3Full
     pkgsUnstable.ruby_3_0
     yarn
+
+    # Nix
+    niv
   ];
 
   programs.direnv = {

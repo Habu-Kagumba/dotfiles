@@ -20,7 +20,7 @@
       rcode = "cd $HOME/Dev/R-Code";
       rustcode = "cd $HOME/Dev/Rust-Code";
       # Brew
-      brewup = "brew update; brew upgrade; brew prune; brew cleanup; brew doctor";
+      brewup = "brew update; brew upgrade; brew cleanup; brew doctor";
       # Docker
       dc = "docker-compose";
       dcb = "docker-compose up --build";
