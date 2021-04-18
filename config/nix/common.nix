@@ -3,8 +3,7 @@
 {
   home.sessionVariables = {
     NIX_PATH = "$HOME/.nix-defexpr/channels:nixpkgs=/nix/var/nix/profiles/per-user/herbertkagumba/channels/nixpkgs:/nix/var/nix/profiles/per-user/herbertkagumba/channels";
-    GOPATH = "$HOME/Dev/Go-code";
-    PATH = "$HOME/bin:$GOPATH/bin:$HOME/.nix-profile/bin";
+    EDITOR = "$HOME/.nix-profile/bin/vim";
   };
 
   home.packages = with pkgs; [
@@ -21,6 +20,7 @@
     exa
     fzf
     gh
+    gnupg
     httpie
     jq
     mosh
@@ -41,6 +41,7 @@
     pythonFull
     python3Full
     pkgsUnstable.ruby_3_0
+    solargraph
     yarn
 
     # Nix

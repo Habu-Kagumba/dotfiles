@@ -1,4 +1,5 @@
 { config, pkgs, ... }:
+
 let
   pkgsUnstable = import <nixpkgs-unstable> {};
 in
@@ -120,10 +121,12 @@ in
       coc-stylelint
       coc-tsserver
       emmet-vim
+      syntastic
       vim-go
       vim-javascript
       vim-nix
       vim-ruby
+      vim-snippets
       yats-vim
     ];
   };

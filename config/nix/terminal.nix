@@ -4,9 +4,20 @@
   programs.fish = {
     enable = true;
     promptInit = ''
-      bass ". $HOME/.nix-profile/etc/profile.d/nix.sh"
+      bass ". $HOME/.nix-profile/etc/profile.d/nix.sh" &&
+      fish_vi_key_bindings
     '';
     shellAliases = {
+      # Terminal
+      ls = "exa -l";
+      cat = "bat";
+      # Harware
+      wifi-off = "networksetup -setairportpower en0 off";
+      wifi-on = "networksetup -setairportpower en0 on";
+      # Network
+      ip = "dig +short myip.opendns.com @resolver1.opendns.com";
+      localip = "ipconfig getifaddr en0";
+      ips = "ifconfig -a | rg -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'";
       # Dev
       dotfiles = "cd $HOME/dotfiles";
       jscode = "cd $HOME/Dev/JS-code";
@@ -121,7 +132,7 @@
       {
         plugin = tmuxPlugins.cpu;
         extraConfig = ''
-          set -g status-right "#[fg=colour247,bg=colour236] CPU: #{cpu_percentage} RAM: #{ram_percentage}  BAT: #{battery_percentage} ⦙ %A, %h %d %Y ⦙ %l:%M %p #[fg=colour252,bg=colour236,nobold,nounderscore,noitalics]"
+          set -g status-right "#[fg=colour247,bg=colour236] CPU: #{cpu_percentage} RAM: #{ram_percentage} ⦙ %A, %h %d %Y ⦙ %l:%M %p #[fg=colour252,bg=colour236,nobold,nounderscore,noitalics]"
         '';
       }
       {
@@ -154,15 +165,15 @@
       draw_bold_text_with_bright_colors = true;
       font = {
         normal = {
-          family = "Fira Code";
+          family = "FiraCode Nerd Font";
           style = "Retina";
         };
         bold = {
-          family = "Fira Code";
+          family = "FiraCode Nerd Font";
           style = "Bold";
         };
         italic = {
-          family = "Fantasque Sans Mono";
+          family = "FantasqueSansMono Nerd Font";
           style = "Italic";
         };
         size = 12.0;
@@ -175,32 +186,69 @@
       };
       shell.program = "fish";
       colors = {
-        # Default colors
         primary = {
-          background = "0x282c34";
-          foreground = "0xabb2bf";
+          background = "0x282a36";
+          foreground = "0xf8f8f2";
         };
-        # Normal colors
+        cursor = {
+          text = "CellBackground";
+          cursor = "CellForeground";
+        };
+        vi_mode_cursor = {
+          text = "CellBackground";
+          cursor = "CellForeground";
+        };
+        search = {
+          matches = {
+            foreground = "0x44475a";
+            background = "0x50fa7b";
+          };
+        };
+        focused_match = {
+          foreground = "0x44475a";
+          background = "0xffb86c";
+        };
+        bar = {
+          background = "0x282a36";
+          foreground = "0xf8f8f2";
+        };
+        line_indicator = {
+          foreground = "None";
+          background = "None";
+        };
+        selection = {
+          text = "CellForeground";
+          background = "0x44475a";
+        };
         normal = {
-          black =   "0x282c34";
-          red =     "0xe06c75";
-          green =   "0x98c379";
-          yellow =  "0xd19a66";
-          blue =    "0x61afef";
-          magenta = "0xc678dd";
-          cyan =    "0x56b6c2";
-          white =   "0xabb2bf";
+          black =   "0x000000";
+          red =     "0xff5555";
+          green =   "0x50fa7b";
+          yellow =  "0xf1fa8c";
+          blue =    "0xbd93f9";
+          magenta = "0xff79c6";
+          cyan =    "0x8be9fd";
+          white =   "0xbfbfbf";
         };
-        # Bright colors
         bright = {
-          black =   "0x5c6370";
-          red =     "0xe06c75";
-          green =   "0x98c379";
-          yellow =  "0xd19a66";
-          blue =    "0x61afef";
-          magenta = "0xc678dd";
-          cyan =    "0x56b6c2";
-          white =   "0xffffff";
+          black =   "0x4d4d4d";
+          red =     "0xff6e67";
+          green =   "0x5af78e";
+          yellow =  "0xf4f99d";
+          blue =    "0xcaa9fa";
+          magenta = "0xff92d0";
+          cyan =    "0x9aedfe";
+          white =   "0xe6e6e6";
+        };
+        dim = {
+          black =   "0x14151b";
+          red =     "0xff2222";
+          green =   "0x1ef956";
+          yellow =  "0xebf85b";
+          blue =    "0x4d5b86";
+          magenta = "0xff46b0";
+          cyan =    "0x59dffc";
+          white =   "0xe6e6d1";
         };
       };
     };
