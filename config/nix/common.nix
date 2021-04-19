@@ -24,6 +24,7 @@
     httpie
     jq
     mosh
+    ngrok
     noti
     parallel
     readline
