@@ -15,7 +15,7 @@ in
     userName = "Habu-Kagumba";
     userEmail = "habukagumba@gmail.com";
     signing = {
-      key = "E1024A1F021639F9";
+      key = "3F9B01CBE4DB7973";
       signByDefault = true;
     };
     aliases = {
