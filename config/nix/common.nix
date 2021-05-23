@@ -39,7 +39,6 @@
     # Languages
     go
     nodejs
-    pythonFull
     python3Full
     pkgsUnstable.ruby_3_0
     solargraph

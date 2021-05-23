@@ -82,7 +82,6 @@ in
     viAlias = true;
     vimAlias = true;
     vimdiffAlias = true;
-    withPython = true;
     withPython3 = true;
     withRuby = true;
     withNodeJs = true;
