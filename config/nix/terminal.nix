@@ -23,7 +23,7 @@
       jscode = "cd $HOME/Dev/JS-code";
       rbcode = "cd $HOME/Dev/Ruby-code";
       pycode = "cd $HOME/Dev/Python-code";
-      gocode = "cd $GOPATH/code";
+      gocode = "cd $HOME/Dev/Go-code";
       opscode = "cd $HOME/Dev/DevOps-code";
       sqlcode = "cd $HOME/Dev/SQL-code";
       docscode = "cd $HOME/Dev/Docs-code";

@@ -25,7 +25,7 @@ in
       uncommit = "reset --soft HEAD~1";
       recommit = "commit --amend --no-edit";
       amend = "commit --amend";
-      get = "pull origin master";
+      get = "pull origin $(git branch 2> /dev/null | grep -e '\* ' | sed 's/^..\(.*\)/\1/')";
       save = "!git add . && git commit --no-verify -m \"WIP: auto save at $(date '+%Y%m%d %H:%M:%S')\"";
       mine = "log --author='Habu-Kagumba'";
     };
