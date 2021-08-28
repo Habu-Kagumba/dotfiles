@@ -390,17 +390,20 @@ autocmd FileType cpp setlocal tabstop=4 shiftwidth=4 expandtab
 "*****************************************************************************
 "" Go
 "*****************************************************************************
+let g:go_bin_path='/Users/herbertkagumba/go/bin'
 let g:go_def_mode='gopls'
 let g:go_info_mode='gopls'
 
 autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
 
-" disable vim-go :GoDef short cut (gd)
-" this is handled by LanguageClient [LC]
-let g:go_def_mapping_enabled = 0
+let g:go_metalinter_autosave = 1
 let g:go_list_type = "quickfix"
 let g:go_fmt_command = "goimports"
 let g:go_fmt_fail_silently = 1
+
+let g:syntastic_go_checkers = ['golint', 'govet', 'golangci-lint']
+let g:syntastic_go_gometalinter_args = ['--disable-all', '--enable=errcheck']
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 
 
 "*****************************************************************************
