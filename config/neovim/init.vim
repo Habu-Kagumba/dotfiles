@@ -519,6 +519,28 @@ nmap <silent> <leader>json :%!python -m json.tool<CR>
 "*****************************************************************************
 "" Coc
 "*****************************************************************************
+"Global extensions
+let g:coc_global_extensions = [
+            \ 'coc-css',
+            \ 'coc-cssmodules',
+            \ 'coc-eslint',
+            \ 'coc-highlight',
+            \ 'coc-html',
+            \ 'coc-json',
+            \ 'coc-lists',
+            \ 'coc-prettier',
+            \ 'coc-rls',
+            \ 'coc-snippets',
+            \ 'coc-solargraph',
+            \ 'coc-stylelint',
+            \ 'coc-tsserver',
+            \ 'coc-json',
+            \ 'coc-lists',
+            \ 'coc-prettier',
+            \ 'coc-sh',
+            \ 'coc-sql'
+            \ ]
+
 " Some servers have issues with backup files, see #649
 set nobackup
 set nowritebackup

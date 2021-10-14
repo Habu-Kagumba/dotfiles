@@ -25,7 +25,7 @@ in
       uncommit = "reset --soft HEAD~1";
       recommit = "commit --amend --no-edit";
       amend = "commit --amend";
-      get = "pull origin $(git branch 2> /dev/null | grep -e '\* ' | sed 's/^..\(.*\)/\1/')";
+      get = "pull origin $(git branch 2> /dev/null | rg -e '\* ' | sed 's/^..\(.*\)/\1/')";
       save = "!git add . && git commit --no-verify -m \"WIP: auto save at $(date '+%Y%m%d %H:%M:%S')\"";
       mine = "log --author='Habu-Kagumba'";
     };
@@ -107,18 +107,6 @@ in
       rhubarb
       # Language Support
       coc-nvim
-      coc-css
-      coc-eslint
-      coc-highlight
-      coc-html
-      coc-json
-      coc-lists
-      coc-prettier
-      coc-rls
-      coc-snippets
-      coc-solargraph
-      coc-stylelint
-      coc-tsserver
       emmet-vim
       syntastic
       vim-go
