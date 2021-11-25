@@ -4,6 +4,7 @@
   home.sessionVariables = {
     NIX_PATH = "$HOME/.nix-defexpr/channels:nixpkgs=/nix/var/nix/profiles/per-user/herbertkagumba/channels/nixpkgs:/nix/var/nix/profiles/per-user/herbertkagumba/channels";
     EDITOR = "$HOME/.nix-profile/bin/vim";
+    GOBIN = "$HOME/go/bin";
   };
 
   home.packages = with pkgs; [
@@ -38,6 +39,7 @@
 
     # Languages
     go
+    nixpkgs-fmt
     nodejs
     python3Full
     pkgsUnstable.ruby_3_0

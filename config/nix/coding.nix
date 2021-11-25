@@ -4,12 +4,6 @@ let
   pkgsUnstable = import <nixpkgs-unstable> {};
 in
 {
-  nixpkgs.overlays = [
-    (import (builtins.fetchTarball {
-      url = https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz;
-    }))
-  ];
-
   programs.git = {
     enable = true;
     userName = "Habu-Kagumba";
@@ -78,7 +72,6 @@ in
 
   programs.neovim = {
     enable = true;
-    package = pkgs.neovim-nightly;
     viAlias = true;
     vimAlias = true;
     vimdiffAlias = true;

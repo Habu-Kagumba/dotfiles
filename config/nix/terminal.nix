@@ -3,7 +3,7 @@
 {
   programs.fish = {
     enable = true;
-    promptInit = ''
+    interactiveShellInit = ''
       bass ". $HOME/.nix-profile/etc/profile.d/nix.sh" &&
       fish_vi_key_bindings
     '';
@@ -30,6 +30,7 @@
       haskellcode = "cd $HOME/Dev/Haskell-code";
       rcode = "cd $HOME/Dev/R-Code";
       rustcode = "cd $HOME/Dev/Rust-Code";
+      ioscode = "cd $HOME/Dev/iOS-code";
       # Brew
       brewup = "brew update; brew upgrade; brew cleanup; brew doctor";
       # Docker
