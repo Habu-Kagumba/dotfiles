@@ -3,14 +3,14 @@ tap homebrew/cask-versions
 
 # Desktop Apps
 cask '1password'
+cask 'appcleaner'
 cask 'authy'
 cask 'clickup'
 cask 'clipy'
 cask 'daisydisk'
 cask 'figma'
-cask 'firefox-nightly'
 cask 'google-chrome'
-cask 'grammarly'
+cask 'gutenprint'
 cask 'imageoptim'
 cask 'keybase'
 cask 'local'
