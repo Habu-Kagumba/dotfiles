@@ -7,44 +7,35 @@
     GOBIN = "$HOME/go/bin";
   };
 
-  home.packages = with pkgs; [
-    # Core
-    autoconf
-    automake
-    coreutils
-    gcc
-    openssl
+  home.sessionPath = [
+    "$HOME/.local/bin"
+  ];
 
+  home.packages = with pkgs; [
     # Utils
     bat
     bottom
     exa
+    fd
     fzf
+    gdu
     gh
     gnupg
     httpie
-    jq
-    mosh
+    lazygit
     ngrok
     noti
     parallel
-    readline
+    pre-commit
     ripgrep
     rsync
-    tmux
     tor
     tree
     watch
     wget
 
     # Languages
-    go
-    nixpkgs-fmt
-    nodejs
     python3Full
-    pkgsUnstable.ruby_3_0
-    solargraph
-    yarn
 
     # Nix
     niv

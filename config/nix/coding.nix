@@ -78,36 +78,5 @@ in
     withPython3 = true;
     withRuby = true;
     withNodeJs = true;
-    extraPackages = with pkgs; [
-      pkgsUnstable.fzf
-    ];
-    extraConfig = builtins.readFile /Users/herbertkagumba/dotfiles/config/neovim/init.vim;
-    plugins = with pkgs.vimPlugins; [
-      # Colorschemes
-      dracula
-      # Essentials
-      auto-pairs
-      fzf-vim
-      fzfWrapper
-      lightline-vim
-      surround
-      tagbar
-      commentary
-      vim-devicons
-      fugitive
-      vim-automkdir
-      repeat
-      rhubarb
-      # Language Support
-      coc-nvim
-      emmet-vim
-      syntastic
-      vim-go
-      vim-javascript
-      vim-nix
-      vim-ruby
-      vim-snippets
-      yats-vim
-    ];
   };
 }

@@ -6,13 +6,13 @@
     interactiveShellInit = ''
       bass ". $HOME/.nix-profile/etc/profile.d/nix.sh" &&
       fish_vi_key_bindings &&
-      source /usr/local/opt/asdf/libexec/asdf.fish
+      source /usr/local/opt/asdf/libexec/asdf.fish &&
     '';
     shellAliases = {
       # Terminal
       ls = "exa -l";
       cat = "bat";
-      # Harware
+      # Hardware
       wifi-off = "networksetup -setairportpower en0 off";
       wifi-on = "networksetup -setairportpower en0 on";
       # Network
@@ -35,6 +35,9 @@
       cryptocode = "cd $HOME/Dev/Crypto-code";
       fluttercode = "cd $HOME/Dev/Flutter-code";
       ccode = "cd $HOME/Dev/C-Code";
+      c3d = "cd $HOME/Dev/3D";
+      openscadcode = "cd $HOME/Dev/Openscad-code";
+      elixircode = "cd $HOME/Dev/Elixir-code";
       # Brew
       brewup = "brew update; brew upgrade; brew cleanup; brew doctor";
       # Docker
@@ -56,6 +59,7 @@
     };
     functions = {
       gi = "curl -sL https://www.gitignore.io/api/$argv";
+      geminit = "gem list --no-versions | xargs -n1 gem uninstall -aI";
     };
     plugins = [
       {
@@ -74,6 +78,9 @@
     enable = true;
     enableBashIntegration = true;
     enableFishIntegration = true;
+    settings = {
+      gcloud.disabled = false;
+    };
   };
 
   programs.tmux = {
@@ -87,7 +94,7 @@
       ###############
       ### General ###
       ###############
-      set-option -g default-shell $SHELL
+      set-option -g default-shell bash
       # Enable mouse support
       set-option -g mouse on
       # Add terminal overrides for better TrueColor support
