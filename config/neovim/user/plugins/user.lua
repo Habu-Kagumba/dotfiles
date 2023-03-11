@@ -10,9 +10,10 @@ return {
   --   end,
   -- },
   {
-    "ur4ltz/surround.nvim",
+    "kylechui/nvim-surround",
+    event = "BufRead",
     config = function()
-      require "surround".setup { mappings_style = "surround" }
+      require("nvim-surround").setup()
     end,
   },
   "mattn/emmet-vim",
