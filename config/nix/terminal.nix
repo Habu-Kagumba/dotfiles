@@ -19,6 +19,8 @@
       ip = "dig +short myip.opendns.com @resolver1.opendns.com";
       localip = "ipconfig getifaddr en0";
       ips = "ifconfig -a | rg -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'";
+      # Git
+      lg = "lazygit";
       # Dev
       dotfiles = "cd $HOME/dotfiles";
       jscode = "cd $HOME/Dev/JS-code";
