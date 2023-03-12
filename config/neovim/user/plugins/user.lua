@@ -11,10 +11,11 @@ return {
   -- },
   {
     "kylechui/nvim-surround",
-    event = "BufRead",
+    event = "BufEnter",
     config = function()
       require("nvim-surround").setup()
     end,
   },
   "mattn/emmet-vim",
+  { "jghauser/mkdir.nvim", event = "BufNewFile" },
 }
