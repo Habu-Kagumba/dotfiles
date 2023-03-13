@@ -16,6 +16,6 @@ return {
       require("nvim-surround").setup()
     end,
   },
-  "mattn/emmet-vim",
   { "jghauser/mkdir.nvim", event = "BufNewFile" },
+  "nordtheme/vim"
 }
