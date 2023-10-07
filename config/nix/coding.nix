@@ -1,9 +1,19 @@
 { config, pkgs, ... }:
 
 let
-  pkgsUnstable = import <nixpkgs-unstable> {};
+  pkgsUnstable = import <nixpkgs-unstable> { };
 in
 {
+  programs.neovim = {
+    enable = true;
+    viAlias = true;
+    vimAlias = true;
+    vimdiffAlias = true;
+    withPython3 = true;
+    withRuby = true;
+    withNodeJs = true;
+  };
+
   programs.git = {
     enable = true;
     userName = "Habu-Kagumba";
@@ -23,12 +33,12 @@ in
       save = "!git add . && git commit --no-verify -m \"WIP: auto save at $(date '+%Y%m%d %H:%M:%S')\"";
       mine = "log --author='Habu-Kagumba'";
     };
-    delta = { 
+    delta = {
       enable = true;
       options = {
         theme = "OneHalfDark";
       };
-    }; 
+    };
     extraConfig = {
       github.user = "Habu-Kagumba";
       url."git@github.com:Habu-Kagumba/" = {
@@ -36,7 +46,10 @@ in
           "me:"
           "https://github.com/Habu-Kagumba/"
         ];
-      }; 
+      };
+      init = {
+        defaultBranch = "main";
+      };
     };
     ignores = [
       ### OS generated files
@@ -62,21 +75,6 @@ in
       ".apdisk"
       ### Vim
       "*.swp"
-      ### Nix
-      "default.nix"
-      "shell.nix"
-      ### Direnv
-      ".envrc"
     ];
-  };
-
-  programs.neovim = {
-    enable = true;
-    viAlias = true;
-    vimAlias = true;
-    vimdiffAlias = true;
-    withPython3 = true;
-    withRuby = true;
-    withNodeJs = true;
   };
 }

@@ -4,14 +4,15 @@
   programs.fish = {
     enable = true;
     interactiveShellInit = ''
-      bass ". $HOME/.nix-profile/etc/profile.d/nix.sh" &&
+      . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.fish &&
       fish_vi_key_bindings &&
       source /usr/local/opt/asdf/libexec/asdf.fish &&
     '';
     shellAliases = {
       # Terminal
-      ls = "exa -l";
+      ls = "eza -l";
       cat = "bat";
+      find = "fd";
       # Hardware
       wifi-off = "networksetup -setairportpower en0 off";
       wifi-on = "networksetup -setairportpower en0 on";
@@ -40,18 +41,20 @@
       c3d = "cd $HOME/Dev/3D";
       openscadcode = "cd $HOME/Dev/Openscad-code";
       elixircode = "cd $HOME/Dev/Elixir-code";
+      projects = "cd $HOME/Dev/Projects";
       # Brew
       brewup = "brew update; brew upgrade; brew cleanup; brew doctor";
       # Docker
-      dc = "docker-compose";
-      dcb = "docker-compose up --build";
+      dc = "docker compose";
+      dcb = "docker compose up --build";
       dclean = "docker stop (docker ps -a -q) ; docker rm -f (docker ps -a -q) ; docker rmi -f (docker images -a -q) ; docker volume rm -f (docker volume ls -q)";
       dprune = "docker container prune -f ; docker image prune -f ; docker network prune -f ; docker volume prune -f";
-      # Bundle
+      # Bundle & Rails
       b = "bundle";
       bx = "bundle exec";
       bip = "bundle install";
       bu = "bundle update";
+      railsjen = "docker run --rm -it -v (PWD):/rails -v ruby-bundle-cache:/bundle -p 2000:3000 ghcr.io/rails/cli";
       # TMUX
       tm = "tmux new-session -s (basename $PWD)";
       tma = "tmux attach-session -t (basename $PWD)";
@@ -63,17 +66,7 @@
       gi = "curl -sL https://www.gitignore.io/api/$argv";
       geminit = "gem list --no-versions | xargs -n1 gem uninstall -aI";
     };
-    plugins = [
-      {
-        name = "bass";
-        src = pkgs.fetchFromGitHub {
-          owner = "edc";
-          repo = "bass";
-          rev = "7aae6a85c24660422ea3f3f4629bb4a8d30df3ba";
-          sha256 = "03693ywczzr46dgpnbawcfv02v5l143dqlz1fzjbhpwwc2xpr42y";
-        };
-      }
-    ];
+    plugins = [ ];
   };
 
   programs.starship = {
@@ -235,34 +228,34 @@
           background = "0x44475a";
         };
         normal = {
-          black =   "0x000000";
-          red =     "0xff5555";
-          green =   "0x50fa7b";
-          yellow =  "0xf1fa8c";
-          blue =    "0xbd93f9";
+          black = "0x000000";
+          red = "0xff5555";
+          green = "0x50fa7b";
+          yellow = "0xf1fa8c";
+          blue = "0xbd93f9";
           magenta = "0xff79c6";
-          cyan =    "0x8be9fd";
-          white =   "0xbfbfbf";
+          cyan = "0x8be9fd";
+          white = "0xbfbfbf";
         };
         bright = {
-          black =   "0x4d4d4d";
-          red =     "0xff6e67";
-          green =   "0x5af78e";
-          yellow =  "0xf4f99d";
-          blue =    "0xcaa9fa";
+          black = "0x4d4d4d";
+          red = "0xff6e67";
+          green = "0x5af78e";
+          yellow = "0xf4f99d";
+          blue = "0xcaa9fa";
           magenta = "0xff92d0";
-          cyan =    "0x9aedfe";
-          white =   "0xe6e6e6";
+          cyan = "0x9aedfe";
+          white = "0xe6e6e6";
         };
         dim = {
-          black =   "0x14151b";
-          red =     "0xff2222";
-          green =   "0x1ef956";
-          yellow =  "0xebf85b";
-          blue =    "0x4d5b86";
+          black = "0x14151b";
+          red = "0xff2222";
+          green = "0x1ef956";
+          yellow = "0xebf85b";
+          blue = "0x4d5b86";
           magenta = "0xff46b0";
-          cyan =    "0x59dffc";
-          white =   "0xe6e6d1";
+          cyan = "0x59dffc";
+          white = "0xe6e6d1";
         };
       };
     };

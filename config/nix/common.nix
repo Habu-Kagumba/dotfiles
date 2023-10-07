@@ -1,8 +1,8 @@
 { config, pkgs, ... }:
 
+
 {
   home.sessionVariables = {
-    NIX_PATH = "$HOME/.nix-defexpr/channels:nixpkgs=/nix/var/nix/profiles/per-user/herbertkagumba/channels/nixpkgs:/nix/var/nix/profiles/per-user/herbertkagumba/channels";
     EDITOR = "$HOME/.nix-profile/bin/vim";
     GOBIN = "$HOME/go/bin";
   };
@@ -11,13 +11,15 @@
     "$HOME/.local/bin"
   ];
 
+  nixpkgs.config.allowUnfree = true;
+
   home.packages = with pkgs; [
     # Utils
     bat
     bottom
-    exa
+    coreutils
+    eza
     fd
-    fzf
     gdu
     gh
     gnupg
@@ -36,13 +38,20 @@
 
     # Languages
     python3Full
+    pyright
 
     # Nix
     niv
   ];
 
-  programs.direnv = {
+  programs.fzf = {
     enable = true;
     enableFishIntegration = true;
+    fileWidgetCommand = "fd --type f";
+    fileWidgetOptions = [ "--preview 'bat -n --color=always {}'" ];
+  };
+
+  programs.direnv = {
+    enable = true;
   };
 }

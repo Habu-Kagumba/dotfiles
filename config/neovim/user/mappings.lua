@@ -8,10 +8,10 @@ return {
   n = {
     -- second key is the lefthand side of the map
     -- mappings seen under group name "Buffer"
-    ["<leader>bb"] = { "<cmd>tabnew<cr>", desc = "New tab" },
-    ["<leader>bc"] = { "<cmd>BufferLinePickClose<cr>", desc = "Pick to close" },
-    ["<leader>bj"] = { "<cmd>BufferLinePick<cr>", desc = "Pick to jump" },
-    ["<leader>bt"] = { "<cmd>BufferLineSortByTabs<cr>", desc = "Sort by tabs" },
+    ["<leader>bn"] = { "<cmd>tabnew<cr>", desc = "New tab" },
+    -- ["<leader>bc"] = { "<cmd>BufferLinePickClose<cr>", desc = "Pick to close" },
+    -- ["<leader>bj"] = { "<cmd>BufferLinePick<cr>", desc = "Pick to jump" },
+    -- ["<leader>bt"] = { "<cmd>BufferLineSortByTabs<cr>", desc = "Sort by tabs" },
     -- tables with the `name` key will be registered with which-key if it's installed
     -- this is useful for naming menus
     ["<leader>b"] = { name = "Buffers" },
@@ -25,7 +25,14 @@ return {
         if require("astronvim.utils").is_available "alpha-nvim" and not bufs[2] then require("alpha").start(true) end
       end,
       desc = "Close Buffer"
-    }
+    },
+    ["<leader>sn"] = { function() require("neotest").run.run() end, desc = "Run nearest test" },
+    ["<leader>sf"] = { function() require("neotest").run.run(vim.fn.expand("%")) end, desc = "Run current test file" },
+    ["<leader>ss"] = { function() require("neotest").run.stop() end, desc = "Stop nearest test" },
+    ["<leader>sa"] = { function() require("neotest").run.attach() end, desc = "Attach to nearest test" },
+    ["<leader>sw"] = { function() require("neotest").watch.toggle(vim.fn.expand("%")) end, desc = "Watch tests" },
+    ["<leader>so"] = { function() require("neotest").output_panel.toggle() end, desc = "Tests output" },
+    ["<leader>sm"] = { function() require("neotest").summary.toggle() end, desc = "Tests summary" },
   },
   t = {
     -- setting a mapping to false will disable it

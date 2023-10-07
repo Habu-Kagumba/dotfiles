@@ -17,6 +17,4 @@ return {
     end,
   },
   { "jghauser/mkdir.nvim", event = "BufNewFile" },
-  "nordtheme/vim",
-  { "mattn/emmet-vim",     event = "BufEnter" }
 }
