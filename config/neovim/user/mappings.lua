@@ -26,13 +26,14 @@ return {
       end,
       desc = "Close Buffer"
     },
-    ["<leader>sn"] = { function() require("neotest").run.run() end, desc = "Run nearest test" },
-    ["<leader>sf"] = { function() require("neotest").run.run(vim.fn.expand("%")) end, desc = "Run current test file" },
-    ["<leader>ss"] = { function() require("neotest").run.stop() end, desc = "Stop nearest test" },
-    ["<leader>sa"] = { function() require("neotest").run.attach() end, desc = "Attach to nearest test" },
-    ["<leader>sw"] = { function() require("neotest").watch.toggle(vim.fn.expand("%")) end, desc = "Watch tests" },
-    ["<leader>so"] = { function() require("neotest").output_panel.toggle() end, desc = "Tests output" },
-    ["<leader>sm"] = { function() require("neotest").summary.toggle() end, desc = "Tests summary" },
+    ["<leader>T"] = { name = "Tests" },
+    ["<leader>Tn"] = { function() require("neotest").run.run() end, desc = "Run nearest test" },
+    ["<leader>Tf"] = { function() require("neotest").run.run(vim.fn.expand("%")) end, desc = "Run current test file" },
+    ["<leader>Ts"] = { function() require("neotest").run.stop() end, desc = "Stop nearest test" },
+    ["<leader>Ta"] = { function() require("neotest").run.attach() end, desc = "Attach to nearest test" },
+    ["<leader>Tw"] = { function() require("neotest").watch.toggle(vim.fn.expand("%")) end, desc = "Watch tests" },
+    ["<leader>To"] = { function() require("neotest").output_panel.toggle() end, desc = "Tests output" },
+    ["<leader>Tm"] = { function() require("neotest").summary.toggle() end, desc = "Tests summary" },
   },
   t = {
     -- setting a mapping to false will disable it
