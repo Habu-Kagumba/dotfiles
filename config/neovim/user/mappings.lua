@@ -26,7 +26,7 @@ return {
       end,
       desc = "Close Buffer"
     },
-    ["<leader>T"] = { name = "Tests" },
+    ["<leader>T"] = { name = "Tests", desc = "󱍼 Tests" },
     ["<leader>Tn"] = { function() require("neotest").run.run() end, desc = "Run nearest test" },
     ["<leader>Tf"] = { function() require("neotest").run.run(vim.fn.expand("%")) end, desc = "Run current test file" },
     ["<leader>Ts"] = { function() require("neotest").run.stop() end, desc = "Stop nearest test" },
