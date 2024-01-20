@@ -12,16 +12,23 @@ return {
     "nvim-pack/nvim-spectre",
     cmd = "Spectre",
     keys = {
-      { prefix .. "s", function() require("spectre").toggle() end,           desc = "Toggle Spectre" },
+      {
+        prefix .. "s",
+        function() require("spectre").toggle() end,
+        desc = "Toggle Spectre",
+      },
       {
         prefix .. "w",
         mode = "x",
         function() require("spectre").open_visual { select_word = true } end,
         desc = "Spectre (current word)",
       },
-      { prefix .. "f", function() require("spectre").open_file_search() end, desc = "Spectre (current file)" },
+      {
+        prefix .. "f",
+        function() require("spectre").open_file_search() end,
+        desc = "Spectre (current file)",
+      },
     },
-
     opts = function()
       return {
         mapping = {
