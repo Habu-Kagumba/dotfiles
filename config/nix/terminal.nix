@@ -5,14 +5,14 @@
     enable = true;
     interactiveShellInit = ''
       . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.fish &&
-      fish_vi_key_bindings &&
-      source /usr/local/opt/asdf/libexec/asdf.fish &&
+      fish_vi_key_bindings
     '';
     shellAliases = {
       # Terminal
       ls = "eza -l";
       cat = "bat";
       find = "fd";
+      du = "dust";
       # Hardware
       wifi-off = "networksetup -setairportpower en0 off";
       wifi-on = "networksetup -setairportpower en0 on";
@@ -54,13 +54,14 @@
       bx = "bundle exec";
       bip = "bundle install";
       bu = "bundle update";
-      railsjen = "docker run --rm -it -v (PWD):/rails -v ruby-bundle-cache:/bundle -p 2000:3000 ghcr.io/rails/cli";
       # TMUX
       tm = "tmux new-session -s (basename $PWD)";
       tma = "tmux attach-session -t (basename $PWD)";
       tmd = "tmux detach";
       tml = "tmux ls";
       tmk = "tmux kill-session";
+      # Zellij
+      zj = "zellij";
     };
     functions = {
       gi = "curl -sL https://www.gitignore.io/api/$argv";
@@ -78,82 +79,14 @@
     };
   };
 
-  programs.tmux = {
+  programs.zellij = {
     enable = true;
-    keyMode = "vi";
-    newSession = true;
-    sensibleOnTop = true;
-    shortcut = "a";
-    terminal = "xterm-256color";
-    extraConfig = ''
-      ###############
-      ### General ###
-      ###############
-      set-option -g default-shell bash
-      # Enable mouse support
-      set-option -g mouse on
-      # Add terminal overrides for better TrueColor support
-      set -as terminal-overrides ",xterm-256color*:Tc"
-      ### Performance settings
-      set -g focus-events off
-      set -g escape-time 0
-      # split panes using | and -
-      bind | split-window -h
-      bind - split-window -v
-      unbind '"'
-      unbind %
-      # Shift arrow to switch windows
-      bind -n S-Left  previous-window
-      bind -n S-Right next-window
-      # Synchronize
-      bind-key s set-window-option synchronize-panes\; display-message "synchronize-panes is now #{?pane_synchronized,on,off}"
-      ###################
-      ### Status Line ###
-      ###################
-      set -g window-status-separator ""
-      set -g status-left "#[fg=colour16,bg=colour254,bold] #S #[fg=colour254,bg=colour236,nobold,nounderscore,noitalics]"
-      setw -g window-status-format "#[fg=colour244,bg=colour236] #I ⦙#[fg=colour250,bg=colour236] #W "
-      setw -g window-status-current-format "#[fg=colour236,bg=colour60,nobold,nounderscore,noitalics] #[fg=colour231,bg=colour60] #I ⦙#[fg=colour231,bg=colour60,bold] #W #[fg=colour60,bg=colour236,nobold,nounderscore,noitalics]"
-
-      # General status bar settings
-      set -g status og
-      set -g status-interval 5
-      set -g status-position bottom
-      set -g status-justify left
-      set -g status-right-length 120
-      set -g status-left-length 120
-      set -g status-bg colour000
-      set -g status-fg colour007
-    '';
-    plugins = with pkgs; [
-      {
-        plugin = tmuxPlugins.continuum;
-        extraConfig = ''
-          set -g @continuum-restore 'on'
-          set -g @continuum-save-interval '60' # minutes
-        '';
-      }
-      tmuxPlugins.yank
-      tmuxPlugins.open
-      tmuxPlugins.pain-control
-      {
-        plugin = tmuxPlugins.cpu;
-        extraConfig = ''
-          set -g status-right "#[fg=colour247,bg=colour236] CPU: #{cpu_percentage} RAM: #{ram_percentage} ⦙ %A, %h %d %Y ⦙ %l:%M %p #[fg=colour252,bg=colour236,nobold,nounderscore,noitalics]"
-        '';
-      }
-      {
-        plugin = tmuxPlugins.resurrect;
-        extraConfig = ''
-          # Tmux sessions and (Neo)Vim sessions integration
-          # See: https://github.com/tmux-plugins/tmux-resurrect/blob/master/docs/restoring_vim_and_neovim_sessions.md
-          # for vim
-          set -g @resurrect-strategy-vim 'session'
-          # for neovim
-          set -g @resurrect-strategy-nvim 'session'
-        '';
-      }
-    ];
+    settings = {
+      on_force_close = "quit";
+      default_shell = "fish";
+      theme = "catppuccin-mocha";
+      copy_command = "pbcopy";
+    };
   };
 
   programs.alacritty = {
@@ -168,15 +101,15 @@
           y = 10;
         };
         dynamic_title = true;
+        option_as_alt = "Both";
       };
-      draw_bold_text_with_bright_colors = true;
       font = {
         normal = {
-          family = "FiraCode Nerd Font";
+          family = "FiraCode Nerd Font Mono";
           style = "Retina";
         };
         bold = {
-          family = "FiraCode Nerd Font";
+          family = "FiraCode Nerd Font Mono";
           style = "Bold";
         };
         italic = {
@@ -188,11 +121,10 @@
           x = 0;
           y = 0;
         };
-        scale_with_dpi = true;
-        use_thin_strokes = true;
       };
       shell.program = "fish";
       colors = {
+        draw_bold_text_with_bright_colors = true;
         primary = {
           background = "0x282a36";
           foreground = "0xf8f8f2";
@@ -210,12 +142,12 @@
             foreground = "0x44475a";
             background = "0x50fa7b";
           };
+          focused_match = {
+            foreground = "0x44475a";
+            background = "0xffb86c";
+          };
         };
-        focused_match = {
-          foreground = "0x44475a";
-          background = "0xffb86c";
-        };
-        bar = {
+        footer_bar = {
           background = "0x282a36";
           foreground = "0xf8f8f2";
         };

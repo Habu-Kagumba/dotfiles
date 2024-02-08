@@ -1,6 +1,8 @@
 { config, pkgs, ... }:
 
-
+let
+  pkgsUnstable = import <nixpkgs-unstable> { };
+in
 {
   home.sessionVariables = {
     EDITOR = "$HOME/.nix-profile/bin/vim";
@@ -14,16 +16,23 @@
   nixpkgs.config.allowUnfree = true;
 
   home.packages = with pkgs; [
+    # Util  ];
     # Utils
+    asdf-vm
+    bandwhich
     bat
     bottom
     coreutils
+    du-dust
     eza
     fd
     gdu
     gh
     gnupg
+    gnused
+    (writeShellScriptBin "gsed" "exec ${gnused}/bin/sed \"$@\"")
     httpie
+    hyperfine
     lazygit
     ngrok
     noti
@@ -31,7 +40,7 @@
     pre-commit
     ripgrep
     rsync
-    tor
+    tokei
     tree
     watch
     wget

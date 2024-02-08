@@ -1,8 +1,5 @@
 { config, pkgs, ... }:
 
-let
-  pkgsUnstable = import <nixpkgs-unstable> { };
-in
 {
   programs.neovim = {
     enable = true;
@@ -20,7 +17,7 @@ in
     userEmail = "habukagumba@gmail.com";
     signing = {
       key = "3F9B01CBE4DB7973";
-      signByDefault = true;
+      signByDefault = false;
     };
     aliases = {
       master = "checkout master";
@@ -75,6 +72,10 @@ in
       ".apdisk"
       ### Vim
       "*.swp"
+      ### VSCODE
+      ".vscode"
+      ### ZELLIJ
+      "*.kdl"
     ];
   };
 }
