@@ -16,7 +16,6 @@ in
   nixpkgs.config.allowUnfree = true;
 
   home.packages = with pkgs; [
-    # Util  ];
     # Utils
     asdf-vm
     bandwhich

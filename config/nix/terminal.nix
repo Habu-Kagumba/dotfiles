@@ -41,6 +41,7 @@
       c3d = "cd $HOME/Dev/3D";
       openscadcode = "cd $HOME/Dev/Openscad-code";
       elixircode = "cd $HOME/Dev/Elixir-code";
+      luacode = "cd $HOME/Dev/Lua-code";
       projects = "cd $HOME/Dev/Projects";
       # Brew
       brewup = "brew update; brew upgrade; brew cleanup; brew doctor";
@@ -54,12 +55,6 @@
       bx = "bundle exec";
       bip = "bundle install";
       bu = "bundle update";
-      # TMUX
-      tm = "tmux new-session -s (basename $PWD)";
-      tma = "tmux attach-session -t (basename $PWD)";
-      tmd = "tmux detach";
-      tml = "tmux ls";
-      tmk = "tmux kill-session";
       # Zellij
       zj = "zellij";
     };
@@ -86,6 +81,9 @@
       default_shell = "fish";
       theme = "catppuccin-mocha";
       copy_command = "pbcopy";
+      keybinds = {
+        unbind = "Ctrl h";
+      };
     };
   };
 
