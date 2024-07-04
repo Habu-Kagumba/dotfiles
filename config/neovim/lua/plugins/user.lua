@@ -76,9 +76,7 @@ return {
   {
     "kylechui/nvim-surround",
     event = "BufEnter",
-    config = function()
-      require("nvim-surround").setup()
-    end,
+    config = function() require("nvim-surround").setup() end,
   },
   { "jghauser/mkdir.nvim", event = "BufNewFile" },
 }
