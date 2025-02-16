@@ -9,25 +9,24 @@ return {
     end,
   },
   {
-    "williamboman/mason-lspconfig.nvim",
-    optional = true,
-    opts = function(_, opts)
-      opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, { "ruby_lsp" })
-    end,
-  },
-  {
-    "WhoIsSethDaniel/mason-tool-installer.nvim",
-    optional = true,
-    opts = function(_, opts)
-      opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, { "ruby_lsp" })
-    end,
+    "neovim/nvim-lspconfig",
+    opts = {
+      servers = {
+        ruby_lsp = {
+          mason = false,
+          cmd = { "bin/ruby-lsp" },
+        },
+      },
+    },
   },
   {
     "stevearc/conform.nvim",
     optional = true,
     opts = {
       formatters_by_ft = {
-        ruby = { "rubocop" },
+        ruby = {
+          command = "bin/rubocop",
+        },
       },
     },
   },

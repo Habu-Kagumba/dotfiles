@@ -38,6 +38,7 @@ return {
     },
     -- enable servers that you already have installed without mason
     servers = {
+      "ruby_lsp",
       -- "pyright"
     },
     -- customize language server configuration options passed to `lspconfig`
