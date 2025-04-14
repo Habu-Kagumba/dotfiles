@@ -14,10 +14,10 @@
   programs.git = {
     enable = true;
     userName = "Habu-Kagumba";
-    userEmail = "habukagumba@gmail.com";
+    userEmail = "habu@kagu.mba";
     signing = {
-      key = "3F9B01CBE4DB7973";
-      signByDefault = false;
+      key = "DBE51BB3B584B26E";
+      signByDefault = true;
     };
     aliases = {
       master = "checkout master";

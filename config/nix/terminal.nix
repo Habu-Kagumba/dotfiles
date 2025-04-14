@@ -24,6 +24,7 @@
       lg = "lazygit";
       # Dev
       dotfiles = "cd $HOME/dotfiles";
+      androidcode = "cd $HOME/Dev/Android-code";
       jscode = "cd $HOME/Dev/JS-code";
       rbcode = "cd $HOME/Dev/Ruby-code";
       pycode = "cd $HOME/Dev/Python-code";
@@ -57,12 +58,14 @@
       bu = "bundle update";
       # Zellij
       zj = "zellij";
+      # Tailscale
+      tailscale = "/Applications/Tailscale.app/Contents/MacOS/Tailscale";
     };
     functions = {
       gi = "curl -sL https://www.gitignore.io/api/$argv";
       geminit = "gem list --no-versions | xargs -n1 gem uninstall -aI";
     };
-    plugins = [ ];
+    plugins = [];
   };
 
   programs.starship = {
@@ -98,17 +101,18 @@
           x = 10;
           y = 10;
         };
+        decorations = "Buttonless";
         dynamic_title = true;
         option_as_alt = "Both";
       };
       font = {
         normal = {
-          family = "FiraCode Nerd Font Mono";
-          style = "Retina";
+          family = "FiraCode Nerd Font";
+          style = "Light";
         };
         bold = {
-          family = "FiraCode Nerd Font Mono";
-          style = "Bold";
+          family = "FiraCode Nerd Font";
+          style = "Regular";
         };
         italic = {
           family = "FantasqueSansMono Nerd Font";
@@ -120,12 +124,12 @@
           y = 0;
         };
       };
-      shell.program = "fish";
+      terminal.shell.program = "fish";
       colors = {
         draw_bold_text_with_bright_colors = true;
         primary = {
-          background = "0x282a36";
-          foreground = "0xf8f8f2";
+          background = "0x282433";
+          foreground = "0xeee9fc";
         };
         cursor = {
           text = "CellBackground";
@@ -158,14 +162,14 @@
           background = "0x44475a";
         };
         normal = {
-          black = "0x000000";
-          red = "0xff5555";
-          green = "0x50fa7b";
-          yellow = "0xf1fa8c";
-          blue = "0xbd93f9";
-          magenta = "0xff79c6";
-          cyan = "0x8be9fd";
-          white = "0xbfbfbf";
+          black = "0x282433";
+          red = "0xe965a5";
+          green = "0xb1f2a7";
+          yellow = "0xebde76";
+          blue = "0xb1baf4";
+          magenta = "0xe192ef";
+          cyan = "0xb3f4f3";
+          white ="0xeee9fc";
         };
         bright = {
           black = "0x4d4d4d";
@@ -178,14 +182,14 @@
           white = "0xe6e6e6";
         };
         dim = {
-          black = "0x14151b";
-          red = "0xff2222";
-          green = "0x1ef956";
-          yellow = "0xebf85b";
-          blue = "0x4d5b86";
-          magenta = "0xff46b0";
-          cyan = "0x59dffc";
-          white = "0xe6e6d1";
+          black = "0x3f3951";
+          red = "0xe965a5";
+          green = "0xb1f2a7";
+          yellow = "0xebde76";
+          blue = "0xb1baf4";
+          magenta = "0xe192ef";
+          cyan = "0xb3f4f3";
+          white = "0xeee9fc";
         };
       };
     };

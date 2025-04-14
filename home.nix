@@ -7,6 +7,7 @@
     config/nix/common.nix
     config/nix/coding.nix
     config/nix/terminal.nix
+    config/nix/ui.nix
   ];
 
   programs.home-manager.enable = true;
@@ -14,5 +15,5 @@
   home.username = "herbertkagumba";
   home.homeDirectory = "/Users/herbertkagumba";
 
-  home.stateVersion = "23.11";
+  home.stateVersion = "24.05";
 }

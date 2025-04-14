@@ -9,5 +9,7 @@ vim.filetype.add {
   },
   filename = {
     [".mjml"] = "html",
+    [".pryrc"] = "ruby",
+    ["justfile"] = "make",
   },
 }

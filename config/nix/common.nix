@@ -7,6 +7,7 @@ in
   home.sessionVariables = {
     EDITOR = "$HOME/.nix-profile/bin/vim";
     GOBIN = "$HOME/go/bin";
+    SSH_AUTH_SOCK = "~/Library/Group\ Containers/2BUA8C4S2C.com.1password/agent.sock";
   };
 
   home.sessionPath = [
@@ -39,6 +40,7 @@ in
     pre-commit
     ripgrep
     rsync
+    sqls
     tokei
     tree
     watch
@@ -56,7 +58,7 @@ in
     enable = true;
     enableFishIntegration = true;
     fileWidgetCommand = "fd --type f";
-    fileWidgetOptions = [ "--preview 'bat -n --color=always {}'" ];
+    fileWidgetOptions = ["--preview 'bat -n --color=always {}'"];
   };
 
   programs.direnv = {
