@@ -7,12 +7,17 @@ local cc_maps = {
   [prefix .. "cg"] = { "<cmd>CodeCompanionChat gemini Toggle<CR>", desc = "Toggle a chat buffer [Gemini]" },
   [prefix .. "co"] = { "<cmd>CodeCompanionChat llama Toggle<CR>", desc = "Toggle a chat buffer [Ollama]" },
   [prefix .. "ca"] = { "<cmd>CodeCompanionChat anthropic Toggle<CR>", desc = "Toggle a chat buffer [Anthropic]" },
+  [prefix .. "cd"] = { "<cmd>CodeCompanionChat deepseek Toggle<CR>", desc = "Toggle a chat buffer [Deepseek]" },
   [prefix .. "t"] = { "<cmd>CodeCompanionChat Add<CR>", desc = "Add selected text to a chat buffer" },
   [prefix .. "tg"] = { "<cmd>CodeCompanionChat gemini Add<CR>", desc = "Add selected text to a chat buffer [Gemini]" },
   [prefix .. "to"] = { "<cmd>CodeCompanionChat llama Add<CR>", desc = "Add selected text to a chat buffer [Ollama]" },
   [prefix .. "ta"] = {
     "<cmd>CodeCompanionChat anthropic Add<CR>",
     desc = "Add selected text to a chat buffer [Anthropic]",
+  },
+  [prefix .. "td"] = {
+    "<cmd>CodeCompanionChat deepseek Add<CR>",
+    desc = "Add selected text to a chat buffer [Deepseek]",
   },
 }
 
@@ -81,11 +86,23 @@ return {
             return require("codecompanion.adapters").extend("gemini", {
               schema = {
                 model = {
-                  default = "gemini-2.5-pro-exp-03-25",
+                  default = "gemini-2.5-flash-preview-05-20",
                 },
               },
               env = {
                 api_key = "cmd:op read op://Personal/AI/Gemini --no-newline",
+              },
+            })
+          end,
+          deepseek = function()
+            return require("codecompanion.adapters").extend("deepseek", {
+              schema = {
+                model = {
+                  default = "deepseek-chat",
+                },
+              },
+              env = {
+                api_key = "cmd:op read op://Personal/AI/Deepseek --no-newline",
               },
             })
           end,
