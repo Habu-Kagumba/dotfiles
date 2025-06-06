@@ -7,7 +7,6 @@
     config/nix/common.nix
     config/nix/coding.nix
     config/nix/terminal.nix
-    config/nix/ui.nix
   ];
 
   programs.home-manager.enable = true;

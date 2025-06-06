@@ -3,6 +3,7 @@ tap "homebrew/cask-versions"
 
 # Desktop Apps
 cask "1password"
+cask "aerospace"
 cask "appcleaner"
 cask "arduino-ide"
 cask "authy"
