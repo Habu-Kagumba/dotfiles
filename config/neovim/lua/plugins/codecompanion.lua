@@ -55,6 +55,11 @@ return {
               ["mcp"] = {
                 callback = function() return require "mcphub.extensions.codecompanion" end,
                 description = "Call tools and resources from the MCP servers",
+                opts = {
+                  show_result_in_chat = true,
+                  make_vars = true,
+                  make_slash_commands = true,
+                },
               },
               vectorcode = {
                 description = "Run VectorCode to retrieve the project context",

@@ -77,6 +77,8 @@
       ".vscode"
       ### ZELLIJ
       "*.kdl"
+      ### Aider
+      ".aider*"
     ];
   };
 }
